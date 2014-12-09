@@ -1,0 +1,2196 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head profile="http://gmpg.org/xfn/11">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+
+	<title>一个fork的面试题 | 酷 壳 - CoolShell.cn</title>
+	<link rel="alternate" type="application/rss+xml" title="RSS 2.0 - 所有文章" href="http://coolshell.cn/feed" />
+	<link rel="alternate" type="application/rss+xml" title="RSS 2.0 - 所有评论" href="http://coolshell.cn/comments/feed" />
+	<link rel="pingback" href="http://coolshell.cn/xmlrpc.php" />
+
+	<!-- style START -->
+	<!-- default style -->
+	<style type="text/css" media="screen">@import url( http://coolshell.cn/wp-content/themes/inove/style.css );</style>
+	<link rel='stylesheet' id='open-sans-css'  href='http://coolshell.cn//wp-includes/css/google-font.css?ver=3.9.1' type='text/css' media='all' />
+	<!-- for translations -->
+			<link rel="stylesheet" href="http://coolshell.cn//wp-content/themes/inove/chinese.css" type="text/css" media="screen" />
+		<!--[if IE]>
+		<link rel="stylesheet" href="http://coolshell.cn//wp-content/themes/inove/ie.css" type="text/css" media="screen" />
+	<![endif]-->
+	<!-- style END -->
+
+	<!-- script START -->
+	<script type="text/javascript" src="http://coolshell.cn//wp-content/themes/inove/js/base.js"></script>
+	<script type="text/javascript" src="http://coolshell.cn//wp-content/themes/inove/js/menu.js"></script>
+	<!-- script END -->
+
+	<link rel="alternate" type="application/rss+xml" title="酷 壳 - CoolShell.cn &raquo; 一个fork的面试题评论Feed" href="http://coolshell.cn/articles/7965.html/feed" />
+<script>var killIE6ImgUrl = "http://coolshell.cn//wp-content/plugins/lets-kill-ie6/img";</script><link rel='stylesheet' id='wp-postratings-css'  href='http://coolshell.cn//wp-content/plugins/wp-postratings/postratings-css.css?ver=1.79' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-pagenavi-css'  href='http://coolshell.cn//wp-content/themes/inove/pagenavi-css.css?ver=2.70' type='text/css' media='all' />
+<script type='text/javascript' src='http://coolshell.cn//wp-includes/js/jquery/jquery.js?ver=1.11.1'></script>
+<script type='text/javascript' src='http://coolshell.cn//wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1'></script>
+<script type='text/javascript' src='http://coolshell.cn//wp-content/plugins/lets-kill-ie6/lets-kill-ie6.js?ver=4.0.1'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://coolshell.cn/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://coolshell.cn//wp-includes/wlwmanifest.xml" /> 
+<link rel='prev' title='各式各样的验证码' href='http://coolshell.cn/articles/7917.html' />
+<link rel='next' title='C++的坑真的多吗？' href='http://coolshell.cn/articles/7992.html' />
+<meta name="generator" content="WordPress 4.0.1" />
+<link rel='shortlink' href='http://coolshell.cn/?p=7965' />
+	<link href="http://coolshell.cn//wp-content/plugins/google-syntax-highlighter/Styles/SyntaxHighlighter.css" type="text/css" rel="stylesheet" />
+	<script type="text/javascript">
+	window._wp_rp_static_base_url = 'https://wprp.zemanta.com/static/';
+	window._wp_rp_wp_ajax_url = "http://coolshell.cn/wp-admin/admin-ajax.php";
+	window._wp_rp_plugin_version = '3.5.2';
+	window._wp_rp_post_id = '7965';
+	window._wp_rp_num_rel_posts = '8';
+	window._wp_rp_thumbnails = false;
+	window._wp_rp_post_title = '%E4%B8%80%E4%B8%AAfork%E7%9A%84%E9%9D%A2%E8%AF%95%E9%A2%98';
+	window._wp_rp_post_tags = ['fork', 'puzzle', 'unix', '%3F%3F', 'c%2B%2B', 'c%2Fc%2B%2B%3F%3F', 'unix%2Flinux', '%3F%3F%3F%3F', 'alt', 'fork', 'int', 'return', 'id'];
+	window._wp_rp_promoted_content = true;
+</script>
+<script type="text/javascript" src="https://wprp.zemanta.com/static/js/loader.js?version=3.5.2" async></script>
+<style type="text/css">
+.related_post_title {
+}
+ul.related_post {
+}
+ul.related_post li {
+}
+ul.related_post li a {
+}
+ul.related_post li img {
+}</style>
+
+<!-- All in One SEO Pack 2.2.3.1 by Michael Torbert of Semper Fi Web Design[326,376] -->
+<meta name="keywords"  content="c++,fork,puzzle,unix,面试,c/c++语言,unix/linux,操作系统,编程语言,趣味问题" />
+
+<link rel="canonical" href="http://coolshell.cn/articles/7965.html" />
+<meta property="og:title" content="一个fork的面试题 | 酷 壳 - CoolShell.cn" />
+<meta property="og:type" content="activity" />
+<meta property="og:url" content="http://coolshell.cn/articles/7965.html" />
+<meta property="og:image" content="http://coolshell.cn//wp-content/plugins/all-in-one-seo-pack/images/default-user-image.png" />
+<meta property="og:site_name" content="酷 壳 - CoolShell.cn" />
+<meta property="og:description" content="前两天有人问了个关于Unix的fork()系统调用的面试题，这个题正好是我大约十年前找工作时某公司问我的一个题，我觉得比较有趣，写篇文章与大家分享一下。这个题是这样的： 题目：请问下面的程序一共输出多少个“-”？  如果你对fork()的机制比较熟悉的话，这个题并不难，输出应该是6个“-”，但是，实际上这个程序会很tricky地输出8个“-”。 要讲清这个题，我们首先需要知道fork()系统调用的特性，   fork()系统调用是Unix下以自身进程创建子进程的系统调用，一次调用，两次返回，如果返回是0，则是子进程，如果返回值&gt;0，则是父进程（返回值是子进程的pid），这是众为周知的。   还有一个很重要的东西是，在fork()的调用处，整个父进程空间会原模原样地复制到子进程中，包括指令，变量值，程序调用栈，环境变量，缓冲区，等等。  所以，上面的那个程序为什么会输入8个“-”，这是因为printf(&quot;-&quot;);语句有buffer，所以，对于上述程序，printf(&quot;-&quot;);把“-”放到了缓存中，并没有真正的输出（参看《C语言的迷题》中的第一题），在fork的时候，缓存被复制到了子进程空间，所以，就多了两个，就成了8个，而不是6个。 另外，多说一下，我们知道，Unix下的设备有“块设备”和“字符设备”的概念，所谓块设备，就是以一块一块的数据存取的设备，字符设备是一次存取一个字符的设备。磁盘、内存都是块设备，字符设备如键盘和串口。块设备一般都有缓存，而字符设备一般都没有缓存。 对于上面的问题，我们如果修改一下上面的printf的那条语句为：  或是  就没有问题了（就是6个“-”了），因为程序遇到“n”，或是EOF，或是缓中区满，或是文件描述符关闭，或是主动flush，或是程序退出，就会把数据刷出缓冲区。需要注意的是，标准输出是行缓冲，所以遇到“n”的时候会刷出缓冲区，但对于磁盘这个块设备来说，“n”并不会引起缓冲区刷出的动作，那是全缓冲，你可以使用setvbuf来设置缓冲区大小，或是用fflush刷缓存。 我估计有些朋友可能对于fork()还不是很了解，那么我们把上面的程序改成下面这样：  于是，上面这段程序会输出下面的结果，（注：编译出的可执行的程序名为fork）  面对这样的图你可能还是看不懂，没事，我好事做到底，画个图给你看看：" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="前两天有人问了个关于Unix的fork()系统调用的面试题，这个题正好是我大约十年前找工作时某公司问我的一个题，我觉得比较有趣，写篇文章与大家分享一下。这个题是这样的： 题目：请问下面的程序一共输出多少个“-”？  如果你对fork()的机制比较熟悉的话，这个题并不难，输出应该是6个“-”，但是，实际上这个程序会很tricky地输出8个“-”。 要讲清这个题，我们首先需要知道fork()系统调用的特性，   fork()系统调用是Unix下以自身进程创建子进程的系统调用，一次调用，两次返回，如果返回是0，则是子进程，如果返回值&gt;0，则是父进程（返回值是子进程的pid），这是众为周知的。   还有一个很重要的东西是，在fork()的调用处，整个父进程空间会原模原样地复制到子进程中，包括指令，变量值，程序调用栈，环境变量，缓冲区，等等。  所以，上面的那个程序为什么会输入8个“-”，这是因为printf(&quot;-&quot;);语句有buffer，所以，对于上述程序，printf(&quot;-&quot;);把“-”放到了缓存中，并没有真正的输出（参看《C语言的迷题》中的第一题），在fork的时候，缓存被复制到了子进程空间，所以，就多了两个，就成了8个，而不是6个。 另外，多说一下，我们知道，Unix下的设备有“块设备”和“字符设备”的概念，所谓块设备，就是以一块一块的数据存取的设备，字符设备是一次存取一个字符的设备。磁盘、内存都是块设备，字符设备如键盘和串口。块设备一般都有缓存，而字符设备一般都没有缓存。 对于上面的问题，我们如果修改一下上面的printf的那条语句为：  或是  就没有问题了（就是6个“-”了），因为程序遇到“n”，或是EOF，或是缓中区满，或是文件描述符关闭，或是主动flush，或是程序退出，就会把数据刷出缓冲区。需要注意的是，标准输出是行缓冲，所以遇到“n”的时候会刷出缓冲区，但对于磁盘这个块设备来说，“n”并不会引起缓冲区刷出的动作，那是全缓冲，你可以使用setvbuf来设置缓冲区大小，或是用fflush刷缓存。 我估计有些朋友可能对于fork()还不是很了解，那么我们把上面的程序改成下面这样：  于是，上面这段程序会输出下面的结果，（注：编译出的可执行的程序名为fork）  面对这样的图你可能还是看不懂，没事，我好事做到底，画个图给你看看：" />
+<meta itemprop="image" content="http://coolshell.cn//wp-content/plugins/all-in-one-seo-pack/images/default-user-image.png" />
+<!-- /all in one seo pack -->
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+
+
+<body>
+<!-- wrap START -->
+<div id="wrap">
+
+<!-- container START -->
+<div id="container"  >
+
+<!-- header START -->
+<div id="header">
+
+	<!-- banner START -->
+			<div class="banner">
+			<a title="把这个链接拖到你的Chrome收藏夹工具栏中" href='javascript:(function(){function c(){var e=document.createElement("link");e.setAttribute("type","text/css");e.setAttribute("rel","stylesheet");e.setAttribute("href",f);e.setAttribute("class",l);document.body.appendChild(e)}function h(){var e=document.getElementsByClassName(l);for(var t=0;t<e.length;t++){document.body.removeChild(e[t])}}function p(){var e=document.createElement("div");e.setAttribute("class",a);document.body.appendChild(e);setTimeout(function(){document.body.removeChild(e)},100)}function d(e){return{height:e.offsetHeight,width:e.offsetWidth}}function v(i){var s=d(i);return s.height>e&&s.height<n&&s.width>t&&s.width<r}function m(e){var t=e;var n=0;while(!!t){n+=t.offsetTop;t=t.offsetParent}return n}function g(){var e=document.documentElement;if(!!window.innerWidth){return window.innerHeight}else if(e&&!isNaN(e.clientHeight)){return e.clientHeight}return 0}function y(){if(window.pageYOffset){return window.pageYOffset}return Math.max(document.documentElement.scrollTop,document.body.scrollTop)}function E(e){var t=m(e);return t>=w&&t<=b+w}function S(){var e=document.createElement("audio");e.setAttribute("class",l);e.src=i;e.loop=false;e.addEventListener("canplay",function(){setTimeout(function(){x(k)},500);setTimeout(function(){N();p();for(var e=0;e<O.length;e++){T(O[e])}},15500)},true);e.addEventListener("ended",function(){N();h()},true);e.innerHTML=" <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";document.body.appendChild(e);e.play()}function x(e){e.className+=" "+s+" "+o}function T(e){e.className+=" "+s+" "+u[Math.floor(Math.random()*u.length)]}function N(){var e=document.getElementsByClassName(s);var t=new RegExp("\\b"+s+"\\b");for(var n=0;n<e.length;){e[n].className=e[n].className.replace(t,"")}}var e=30;var t=30;var n=350;var r=350;var i="//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake.mp3";var s="mw-harlem_shake_me";var o="im_first";var u=["im_drunk","im_baked","im_trippin","im_blown"];var a="mw-strobe_light";var f="//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css";var l="mw_added_css";var b=g();var w=y();var C=document.getElementsByTagName("*");var k=null;for(var L=0;L<C.length;L++){var A=C[L];if(v(A)){if(E(A)){k=A;break}}}if(A===null){console.warn("Could not find a node of the right size. Please try a different page.");return}c();S();var O=[];for(var L=0;L<C.length;L++){var A=C[L];if(v(A)){O.push(A)}}})()    '>High一下!</a>		</div>
+		<!-- banner END -->
+
+	<div id="caption">
+		<h1 id="title"><a href="http://coolshell.cn/">酷 壳 &#8211; CoolShell.cn</a></h1>
+		<div id="tagline">享受编程和技术所带来的快乐 &#8211; http://coolshell.cn</div>
+	</div>
+
+	<div class="fixed"></div>
+</div>
+<!-- header END -->
+
+<!-- navigation START -->
+<div id="navigation">
+	<!-- menus START -->
+	<ul id="menus">
+		<li class="page_item"><a class="home" title="首页" href="http://coolshell.cn/">首页</a></li>
+		<li class="page_item page-item-4194"><a href="http://coolshell.cn/featured_posts">推荐文章</a></li>
+<li class="page_item page-item-3839"><a href="http://coolshell.cn/plugins">本站插件</a></li>
+<li class="page_item page-item-2"><a href="http://coolshell.cn/guestbook">留言小本</a></li>
+<li class="page_item page-item-368"><a href="http://coolshell.cn/about">关于酷壳</a></li>
+<li class="page_item page-item-4470"><a href="http://coolshell.cn/haoel">关于陈皓</a></li>
+		<li><a class="lastmenu" href="javascript:void(0);"></a></li>
+	</ul>
+	<!-- menus END -->
+
+	<!-- searchbox START -->
+	<div id="searchbox">
+					<form action="http://coolshell.cn" method="get">
+				<div class="content">
+					<input type="text" class="textfield" name="s" size="24" value="" />
+					<input type="submit" class="button" value="" />
+				</div>
+			</form>
+			</div>
+<script type="text/javascript">
+//<![CDATA[
+	var searchbox = MGJS.$("searchbox");
+	var searchtxt = MGJS.getElementsByClassName("textfield", "input", searchbox)[0];
+	var searchbtn = MGJS.getElementsByClassName("button", "input", searchbox)[0];
+	var tiptext = "请输入关键字...";
+	if(searchtxt.value == "" || searchtxt.value == tiptext) {
+		searchtxt.className += " searchtip";
+		searchtxt.value = tiptext;
+	}
+	searchtxt.onfocus = function(e) {
+		if(searchtxt.value == tiptext) {
+			searchtxt.value = "";
+			searchtxt.className = searchtxt.className.replace(" searchtip", "");
+		}
+	}
+	searchtxt.onblur = function(e) {
+		if(searchtxt.value == "") {
+			searchtxt.className += " searchtip";
+			searchtxt.value = tiptext;
+		}
+	}
+	searchbtn.onclick = function(e) {
+		if(searchtxt.value == "" || searchtxt.value == tiptext) {
+			return false;
+		}
+	}
+//]]>
+</script>
+	<!-- searchbox END -->
+
+	<div class="fixed"></div>
+</div>
+<!-- navigation END -->
+
+<!-- content START -->
+<div id="content">
+
+	<!-- main START -->
+	<div id="main">
+
+
+	<div id="postpath">
+		<a title="转到首页" href="http://coolshell.cn/">首页</a>
+		 &gt; <a href="http://coolshell.cn/category/proglanguage/cplusplus" rel="category tag">C/C++语言</a>, <a href="http://coolshell.cn/category/operatingsystem/unixlinux" rel="category tag">Unix/Linux</a>, <a href="http://coolshell.cn/category/operatingsystem" rel="category tag">操作系统</a>, <a href="http://coolshell.cn/category/proglanguage" rel="category tag">编程语言</a>, <a href="http://coolshell.cn/category/funny" rel="category tag">趣味问题</a>		 &gt; 一个fork的面试题	</div>
+
+	<div class="post" id="post-7965">
+		<h2>一个fork的面试题</h2>
+		<div class="info">
+			<span class="date">2012年8月1日</span>
+			<span class="author"><a href="http://coolshell.cn/articles/author/haoel" title="由陈皓发布" rel="author">陈皓</a></span>										<span class="addcomment"><a href="#respond">发表评论</a></span>
+				<span class="comments"><a href="#comments">阅读评论</a></span>
+						<span class="comments"> 76,349 人阅读  &nbsp;  &nbsp;</span>
+			<div class="fixed"></div>
+		</div>
+		<div class="content">
+			<p>前两天有人问了个关于Unix的fork()系统调用的面试题，这个题正好是我大约十年前找工作时某公司问我的一个题，我觉得比较有趣，写篇文章与大家分享一下。这个题是这样的：</p>
+<p><strong>题目：请问下面的程序一共输出多少个“-”？</strong></p>
+<pre class="brush: cpp; title: ; notranslate" title="">#include &lt;stdio.h&gt;
+#include &lt;sys/types.h&gt;
+#include &lt;unistd.h&gt;
+
+int main(void)
+{
+   int i;
+   for(i=0; i&lt;2; i++){
+      fork();
+      printf(&quot;-&quot;);
+   }
+
+   wait(NULL);
+   wait(NULL);
+
+   return 0;
+}</pre>
+<p>如果你对fork()的机制比较熟悉的话，这个题并不难，输出应该是6个“-”，但是，实际上这个程序会很tricky地输出8个“-”。</p>
+<p>要讲清这个题，我们首先需要知道fork()系统调用的特性，</p>
+<p><span id="more-7965"></span></p>
+<ul>
+<li>fork()系统调用是Unix下以自身进程创建子进程的系统调用，一次调用，两次返回，如果返回是0，则是子进程，如果返回值&gt;0，则是父进程（返回值是子进程的pid），这是众为周知的。</li>
+</ul>
+<ul>
+<li>还有一个很重要的东西是，在fork()的调用处，整个父进程空间会原模原样地复制到子进程中，包括指令，变量值，程序调用栈，环境变量，缓冲区，等等。</li>
+</ul>
+<p>所以，上面的那个程序为什么会输入8个“-”，这是因为printf(&#8220;-&#8220;);语句有buffer，所以，对于上述程序，printf(&#8220;-&#8220;);把“-”放到了缓存中，并没有真正的输出（参看《<a title="C语言的谜题" href="http://coolshell.cn/articles/945.html" target="_blank">C语言的迷题</a>》中的第一题），<strong>在fork的时候，缓存被复制到了子进程空间</strong>，所以，就多了两个，就成了8个，而不是6个。</p>
+<p>另外，多说一下，我们知道，Unix下的设备有“<a href="http://en.wikipedia.org/wiki/Device_file#Block_devices" target="_blank">块设备</a>”和“<a href="http://en.wikipedia.org/wiki/Device_file#Character_devices" target="_blank">字符设备</a>”的概念，所谓块设备，就是以一块一块的数据存取的设备，字符设备是一次存取一个字符的设备。磁盘、内存都是块设备，字符设备如键盘和串口。<strong>块设备一般都有缓存，而字符设备一般都没有缓存</strong>。</p>
+<p>对于上面的问题，我们如果修改一下上面的printf的那条语句为：</p>
+<pre class="brush: cpp; title: ; notranslate" title="">printf("-\n");</pre>
+<p>或是</p>
+<pre class="brush: cpp; title: ; notranslate" title=""> printf("-");
+fflush(stdout);</pre>
+<p>就没有问题了（就是6个“-”了），因为程序遇到“\n”，或是EOF，或是缓中区满，或是文件描述符关闭，或是主动flush，或是程序退出，就会把数据刷出缓冲区。需要注意的是，标准输出是行缓冲，所以遇到“\n”的时候会刷出缓冲区，但对于磁盘这个块设备来说，“\n”并不会引起缓冲区刷出的动作，那是全缓冲，你可以使用setvbuf来设置缓冲区大小，或是用fflush刷缓存。</p>
+<p>我估计有些朋友可能对于fork()还不是很了解，那么我们把上面的程序改成下面这样：</p>
+<pre class="brush: cpp; title: ; notranslate" title="">#include &lt;stdio.h&gt;
+#include &lt;sys/types.h&gt;
+#include &lt;unistd.h&gt;
+int main(void)
+{
+   int i;
+   for(i=0; i&lt;2; i++){
+      fork();
+      //注意：下面的printf有“\n”
+      printf(&quot;ppid=%d, pid=%d, i=%d \n&quot;, getppid(), getpid(), i);
+   }
+   sleep(10); //让进程停留十秒，这样我们可以用pstree查看一下进程树
+   return 0;
+}
+</pre>
+<p>于是，上面这段程序会输出下面的结果，（注：编译出的可执行的程序名为fork）</p>
+<pre class="brush: bash; title: ; notranslate" title="">ppid=8858, pid=8518, i=0
+ppid=8858, pid=8518, i=1
+ppid=8518, pid=8519, i=0
+ppid=8518, pid=8519, i=1
+ppid=8518, pid=8520, i=1
+ppid=8519, pid=8521, i=1
+
+$ pstree -p | grep fork
+|-bash(8858)-+-fork(8518)-+-fork(8519)---fork(8521)
+|            |            `-fork(8520)</pre>
+<p>面对这样的图你可能还是看不懂，没事，我好事做到底，画个图给你看看：</p>
+<p><img class="aligncenter size-full wp-image-7968" title="fork 程序调用图" src="http://coolshell.cn//wp-content/uploads/2012/07/fork01jpg.jpg" alt="" width="620" height="407" /></p>
+<p>注意：上图中的我用了几个色彩，相同颜色的是同一个进程。于是，我们的pstree的图示就可以成为下面这个样子：（下图中的颜色与上图对应）</p>
+<p><img class="aligncenter size-full wp-image-7969" title="fork进程树" src="http://coolshell.cn//wp-content/uploads/2012/07/fork02.jpg" alt="" width="437" height="97" /></p>
+<p>这样，对于printf(&#8220;-&#8220;);这个语句，我们就可以很清楚的知道，哪个子进程复制了父进程标准输出缓中区里的的内容，而导致了多次输出了。（如下图所示，就是我阴影并双边框了那两个子进程）</p>
+<p><img class="aligncenter size-full wp-image-7970" title="fork程序执行图" src="http://coolshell.cn//wp-content/uploads/2012/07/fork03.jpg" alt="" width="626" height="415" /></p>
+<p>现在你明白了吧。（另，对于图中的我本人拙劣的配色，请见谅!）</p>
+<p>（全文完）
+<div style="margin-top: 15px; font-size: 11px;color: #cc0000;">
+<p align=center><strong>（转载本站文章请注明作者和出处 <a href="http://coolshell.cn/">酷 壳 &#8211; CoolShell.cn</a> ，请勿用于任何商业用途）</strong></div>
+<div style="text-align:center;padding:0px;font-size: 14px;margin-bottom: 50px;">——=== <b>访问 <a href=http://coolshell.cn/404/ target=_blank>酷壳404页面</a> 寻找遗失儿童。</b> ===——</div>
+<div style="clear:both; margin-top:5px; margin-bottom:5px;"></div><div style="float:left"><!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<a class="jiathis_button_tsina"></a>
+<a class="jiathis_button_tqq"></a>
+<a class="jiathis_button_tsohu"></a>
+<a class="jiathis_button_t163"></a>
+<a class="jiathis_button_douban"></a>
+<a class="jiathis_button_renren"></a>
+<a class="jiathis_button_zhuaxia"></a>
+<a class="jiathis_button_fanfou"></a>
+<a class="jiathis_button_twitter"></a>
+<a class="jiathis_button_fb"></a>
+<a class="jiathis_button_gmail"></a>
+<a class="jiathis_button_linkedin"></a>
+<a class="jiathis_button_friendfeed"></a>
+<a class="jiathis_button_digg"></a>
+<a href="http://www.jiathis.com/share?uid=1541368" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+	data_track_clickback:true,
+	summary:"",
+	hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1541368" charset="utf-8"></script>
+<!-- JiaThis Button END --></div><div style="clear:both; margin-top:5px; margin-bottom:5px;"></div>			<div class="fixed"></div>
+		</div>
+		<div class="under">
+			<span class="categories">分类: </span><span><a href="http://coolshell.cn/category/proglanguage/cplusplus" rel="category tag">C/C++语言</a>, <a href="http://coolshell.cn/category/operatingsystem/unixlinux" rel="category tag">Unix/Linux</a>, <a href="http://coolshell.cn/category/operatingsystem" rel="category tag">操作系统</a>, <a href="http://coolshell.cn/category/proglanguage" rel="category tag">编程语言</a>, <a href="http://coolshell.cn/category/funny" rel="category tag">趣味问题</a></span>			<span class="tags">标签: </span><span><a href="http://coolshell.cn/tag/c" rel="tag">C++</a>, <a href="http://coolshell.cn/tag/fork" rel="tag">fork</a>, <a href="http://coolshell.cn/tag/puzzle" rel="tag">Puzzle</a>, <a href="http://coolshell.cn/tag/unix" rel="tag">Unix</a>, <a href="http://coolshell.cn/tag/interview" rel="tag">面试</a></span>		</div>
+<div id="post-ratings-7965" class="post-ratings" itemscope itemtype="http://schema.org/Article" data-nonce="6eea009c20"><img id="rating_7965_1" src="http://coolshell.cn//wp-content/plugins/wp-postratings/images/stars_crystal/rating_on.gif" alt="好烂啊" title="好烂啊" onmouseover="current_rating(7965, 1, '好烂啊');" onmouseout="ratings_off(4.9, 5, 0);" onclick="rate_post();" onkeypress="rate_post();" style="cursor: pointer; border: 0px;" /><img id="rating_7965_2" src="http://coolshell.cn//wp-content/plugins/wp-postratings/images/stars_crystal/rating_on.gif" alt="有点差" title="有点差" onmouseover="current_rating(7965, 2, '有点差');" onmouseout="ratings_off(4.9, 5, 0);" onclick="rate_post();" onkeypress="rate_post();" style="cursor: pointer; border: 0px;" /><img id="rating_7965_3" src="http://coolshell.cn//wp-content/plugins/wp-postratings/images/stars_crystal/rating_on.gif" alt="凑合看看" title="凑合看看" onmouseover="current_rating(7965, 3, '凑合看看');" onmouseout="ratings_off(4.9, 5, 0);" onclick="rate_post();" onkeypress="rate_post();" style="cursor: pointer; border: 0px;" /><img id="rating_7965_4" src="http://coolshell.cn//wp-content/plugins/wp-postratings/images/stars_crystal/rating_on.gif" alt="还不错" title="还不错" onmouseover="current_rating(7965, 4, '还不错');" onmouseout="ratings_off(4.9, 5, 0);" onclick="rate_post();" onkeypress="rate_post();" style="cursor: pointer; border: 0px;" /><img id="rating_7965_5" src="http://coolshell.cn//wp-content/plugins/wp-postratings/images/stars_crystal/rating_half.gif" alt="很精彩" title="很精彩" onmouseover="current_rating(7965, 5, '很精彩');" onmouseout="ratings_off(4.9, 5, 0);" onclick="rate_post();" onkeypress="rate_post();" style="cursor: pointer; border: 0px;" /> (<strong>28</strong> 人打了分，平均分： <strong>4.89</strong> )<br /><span class="post-ratings-text" id="ratings_7965_text"></span><meta itemprop="name" content="一个fork的面试题" /><meta itemprop="description" content="前两天有人问了个关于Unix的fork()系统调用的面试题，这个题正好是我大约十年前找工作时某公司问我的一个题，我觉得比较有趣，写篇文章与大家分享一下。这个题是这样的：
+
+题目：请问下面的程序一共输出多少个&ldquo;-&rdquo;？
+
+[c]#include 
+#include 
+#include 
+
+int main(void)
+{
+   int i;
+   for(i=0; i" /><meta itemprop="url" content="http://coolshell.cn/articles/7965.html" /><div style="display: none;" itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating"><meta itemprop="bestRating" content="5" /><meta itemprop="ratingValue" content="4.89" /><meta itemprop="ratingCount" content="28" /></div></div><div id="post-ratings-7965-loading" class="post-ratings-loading">
+			<img src="http://coolshell.cn//wp-content/plugins/wp-postratings/images/loading.gif" width="16" height="16" alt="Loading..." title="Loading..." class="post-ratings-image" />Loading...</div> 
+	</div>
+
+	<!-- related posts START -->
+	<div id="related_posts">
+<div class="wp_rp_wrap  wp_rp_plain" id="wp_rp_first"><div class="wp_rp_content"><h3 class="related_post_title">相关文章</h3><ul class="related_post wp_rp"><li data-position="0" data-poid="in-8638" data-post-type="none" ><small class="wp_rp_publish_date">2012年11月22日</small> <a href="http://coolshell.cn/articles/8638.html" class="wp_rp_title">为什么不能用微信或米聊这类的软件</a></li><li data-position="1" data-poid="in-1532" data-post-type="none" ><small class="wp_rp_publish_date">2009年10月11日</small> <a href="http://coolshell.cn/articles/1532.html" class="wp_rp_title">到处都是Unix的胎记</a></li><li data-position="2" data-poid="in-7771" data-post-type="none" ><small class="wp_rp_publish_date">2012年07月05日</small> <a href="http://coolshell.cn/articles/7771.html" class="wp_rp_title">少即是极多</a></li><li data-position="3" data-poid="in-8088" data-post-type="none" ><small class="wp_rp_publish_date">2012年08月16日</small> <a href="http://coolshell.cn/articles/8088.html" class="wp_rp_title">对技术的态度</a></li><li data-position="4" data-poid="in-3445" data-post-type="none" ><small class="wp_rp_publish_date">2011年01月07日</small> <a href="http://coolshell.cn/articles/3445.html" class="wp_rp_title">输出从1到1000的数</a></li><li data-position="5" data-poid="in-3738" data-post-type="none" ><small class="wp_rp_publish_date">2011年02月28日</small> <a href="http://coolshell.cn/articles/3738.html" class="wp_rp_title">打印质数的各种算法</a></li><li data-position="6" data-poid="in-4162" data-post-type="none" ><small class="wp_rp_publish_date">2011年04月02日</small> <a href="http://coolshell.cn/articles/4162.html" class="wp_rp_title">又一个有趣的面试题</a></li><li data-position="7" data-poid="in-3961" data-post-type="none" ><small class="wp_rp_publish_date">2011年03月21日</small> <a href="http://coolshell.cn/articles/3961.html" class="wp_rp_title">“火柴棍式”程序员面试题</a></li></ul></div></div>
+</div><div class="fixed"></div>	<!-- related posts END -->
+
+	<script type="text/javascript" src="http://coolshell.cn//wp-content/themes/inove/js/comment.js"></script>
+
+
+
+<div id="comments">
+
+<div id="cmtswitcher">
+			<a id="commenttab" class="curtab" href="javascript:void(0);" onclick="MGJS.switchTab('thecomments,commentnavi', 'thetrackbacks', 'commenttab', 'curtab', 'trackbacktab', 'tab');">评论 (115)</a>
+		<a id="trackbacktab" class="tab" href="javascript:void(0);" onclick="MGJS.switchTab('thetrackbacks', 'thecomments,commentnavi', 'trackbacktab', 'curtab', 'commenttab', 'tab');">Trackbacks (68)</a>
+				<span class="addcomment"><a href="#respond">发表评论</a></span>
+				<span class="addtrackback"><a href="http://coolshell.cn/articles/7965.html/trackback">Trackback</a></span>
+		<div class="fixed"></div>
+</div>
+
+<div id="commentlist">
+	<!-- comments START -->
+	<ol id="thecomments">
+		<li class="comment regularcomment" id="comment-1520597">
+		<div class="author">
+			<div class="pic">
+				<img alt='' src='http://0.gravatar.com/avatar/6bfe480ed9f6935ebaf1b1e0b2a86347?s=32&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32 photo' height='32' width='32' />			</div>
+			<div class="name">
+									<span id="commentauthor-1520597">
+				
+				LeoDemon
+									</span>
+							</div>
+		</div>
+
+		<div class="info">
+			<div class="date">
+				2014年8月27日17:24					 | <a href="#comment-1520597">#1</a>
+			</div>
+			<div class="act">
+				<a href="javascript:void(0);" onclick="MGJS_CMT.reply('commentauthor-1520597', 'comment-1520597', 'comment');">回复</a> | 
+				<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-1520597', 'comment-1520597', 'commentbody-1520597', 'comment');">引用</a>
+							</div>
+			<div class="fixed"></div>
+			<div class="content">
+				
+				<div id="commentbody-1520597">
+					<p>Awesome!!!</p>
+				</div>
+			</div>
+		</div>
+		<div class="fixed"></div>
+
+</li><!-- #comment-## -->
+	<li class="comment regularcomment" id="comment-1524405">
+		<div class="author">
+			<div class="pic">
+				<img alt='' src='http://1.gravatar.com/avatar/d7ff7f1641bed873444b25a8e4ffc2ba?s=32&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32 photo' height='32' width='32' />			</div>
+			<div class="name">
+									<span id="commentauthor-1524405">
+				
+				夏驰疆
+									</span>
+							</div>
+		</div>
+
+		<div class="info">
+			<div class="date">
+				2014年9月2日16:55					 | <a href="#comment-1524405">#2</a>
+			</div>
+			<div class="act">
+				<a href="javascript:void(0);" onclick="MGJS_CMT.reply('commentauthor-1524405', 'comment-1524405', 'comment');">回复</a> | 
+				<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-1524405', 'comment-1524405', 'commentbody-1524405', 'comment');">引用</a>
+							</div>
+			<div class="fixed"></div>
+			<div class="content">
+				
+				<div id="commentbody-1524405">
+					<p>Good!</p>
+				</div>
+			</div>
+		</div>
+		<div class="fixed"></div>
+
+</li><!-- #comment-## -->
+	<li class="comment regularcomment" id="comment-1533255">
+		<div class="author">
+			<div class="pic">
+				<img alt='' src='http://0.gravatar.com/avatar/adade7c00706662d8919e6de4662c9b7?s=32&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32 photo' height='32' width='32' />			</div>
+			<div class="name">
+									<span id="commentauthor-1533255">
+				
+				mnff
+									</span>
+							</div>
+		</div>
+
+		<div class="info">
+			<div class="date">
+				2014年9月13日23:54					 | <a href="#comment-1533255">#3</a>
+			</div>
+			<div class="act">
+				<a href="javascript:void(0);" onclick="MGJS_CMT.reply('commentauthor-1533255', 'comment-1533255', 'comment');">回复</a> | 
+				<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-1533255', 'comment-1533255', 'commentbody-1533255', 'comment');">引用</a>
+							</div>
+			<div class="fixed"></div>
+			<div class="content">
+				
+				<div id="commentbody-1533255">
+					<p>太牛了</p>
+				</div>
+			</div>
+		</div>
+		<div class="fixed"></div>
+
+</li><!-- #comment-## -->
+	<li class="comment regularcomment" id="comment-1536794">
+		<div class="author">
+			<div class="pic">
+				<img alt='' src='http://0.gravatar.com/avatar/265f5cccda053426e290905ac802e75a?s=32&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32 photo' height='32' width='32' />			</div>
+			<div class="name">
+									<span id="commentauthor-1536794">
+				
+				Marvin
+									</span>
+							</div>
+		</div>
+
+		<div class="info">
+			<div class="date">
+				2014年9月17日21:16					 | <a href="#comment-1536794">#4</a>
+			</div>
+			<div class="act">
+				<a href="javascript:void(0);" onclick="MGJS_CMT.reply('commentauthor-1536794', 'comment-1536794', 'comment');">回复</a> | 
+				<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-1536794', 'comment-1536794', 'commentbody-1536794', 'comment');">引用</a>
+							</div>
+			<div class="fixed"></div>
+			<div class="content">
+				
+				<div id="commentbody-1536794">
+					<p>受益匪浅！！Cool！！</p>
+				</div>
+			</div>
+		</div>
+		<div class="fixed"></div>
+
+</li><!-- #comment-## -->
+	<li class="comment regularcomment" id="comment-1557593">
+		<div class="author">
+			<div class="pic">
+				<img alt='' src='http://0.gravatar.com/avatar/8f43c269896a0e918ba937b8e77e5760?s=32&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32 photo' height='32' width='32' />			</div>
+			<div class="name">
+									<span id="commentauthor-1557593">
+				
+				nicstal
+									</span>
+							</div>
+		</div>
+
+		<div class="info">
+			<div class="date">
+				2014年9月28日11:30					 | <a href="#comment-1557593">#5</a>
+			</div>
+			<div class="act">
+				<a href="javascript:void(0);" onclick="MGJS_CMT.reply('commentauthor-1557593', 'comment-1557593', 'comment');">回复</a> | 
+				<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-1557593', 'comment-1557593', 'commentbody-1557593', 'comment');">引用</a>
+							</div>
+			<div class="fixed"></div>
+			<div class="content">
+				
+				<div id="commentbody-1557593">
+					<p>你好，我跑了下第一个程序，输出是   &#8211;root@Debian:~$ &#8212;&#8212;   没问题。然后我在第12行加上一句sleep（1）； 输出变成了    &#8212;-root@Debian:~$ &#8212;-  请问这是怎么回事，涉及到系统底层的时间片分配吗？</p>
+				</div>
+			</div>
+		</div>
+		<div class="fixed"></div>
+
+</li><!-- #comment-## -->
+	<li class="comment regularcomment" id="comment-1558683">
+		<div class="author">
+			<div class="pic">
+				<img alt='' src='http://1.gravatar.com/avatar/7ae271a3f87fe12301f572fb3c7e2314?s=32&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32 photo' height='32' width='32' />			</div>
+			<div class="name">
+									<span id="commentauthor-1558683">
+				
+				JackieWang
+									</span>
+							</div>
+		</div>
+
+		<div class="info">
+			<div class="date">
+				2014年9月29日23:55					 | <a href="#comment-1558683">#6</a>
+			</div>
+			<div class="act">
+				<a href="javascript:void(0);" onclick="MGJS_CMT.reply('commentauthor-1558683', 'comment-1558683', 'comment');">回复</a> | 
+				<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-1558683', 'comment-1558683', 'commentbody-1558683', 'comment');">引用</a>
+							</div>
+			<div class="fixed"></div>
+			<div class="content">
+				
+				<div id="commentbody-1558683">
+					<p>通俗易懂</p>
+				</div>
+			</div>
+		</div>
+		<div class="fixed"></div>
+
+</li><!-- #comment-## -->
+	<li class="comment regularcomment" id="comment-1560739">
+		<div class="author">
+			<div class="pic">
+				<img alt='' src='http://0.gravatar.com/avatar/ce2d1675c3a2f50fba8e75c471b9e10f?s=32&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32 photo' height='32' width='32' />			</div>
+			<div class="name">
+									<a id="commentauthor-1560739" class="url" href="http://lin-credible.github.io/about/" rel="external nofollow">
+				
+				colin
+									</a>
+							</div>
+		</div>
+
+		<div class="info">
+			<div class="date">
+				2014年10月2日17:13					 | <a href="#comment-1560739">#7</a>
+			</div>
+			<div class="act">
+				<a href="javascript:void(0);" onclick="MGJS_CMT.reply('commentauthor-1560739', 'comment-1560739', 'comment');">回复</a> | 
+				<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-1560739', 'comment-1560739', 'commentbody-1560739', 'comment');">引用</a>
+							</div>
+			<div class="fixed"></div>
+			<div class="content">
+				
+				<div id="commentbody-1560739">
+					<p>Thanks so much.</p>
+				</div>
+			</div>
+		</div>
+		<div class="fixed"></div>
+
+</li><!-- #comment-## -->
+	<li class="comment regularcomment" id="comment-1565861">
+		<div class="author">
+			<div class="pic">
+				<img alt='' src='http://0.gravatar.com/avatar/865df2a67a3c22fffb932fd8c38a5dc5?s=32&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32 photo' height='32' width='32' />			</div>
+			<div class="name">
+									<a id="commentauthor-1565861" class="url" href="http://sadhen.com" rel="external nofollow">
+				
+				sadhen
+									</a>
+							</div>
+		</div>
+
+		<div class="info">
+			<div class="date">
+				2014年10月8日20:53					 | <a href="#comment-1565861">#8</a>
+			</div>
+			<div class="act">
+				<a href="javascript:void(0);" onclick="MGJS_CMT.reply('commentauthor-1565861', 'comment-1565861', 'comment');">回复</a> | 
+				<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-1565861', 'comment-1565861', 'commentbody-1565861', 'comment');">引用</a>
+							</div>
+			<div class="fixed"></div>
+			<div class="content">
+				
+				<div id="commentbody-1565861">
+					<p><a href="#comment-201164" rel="nofollow">@kim </a><br />
+可能是你用了zsh的缘故，我在ubuntu下用zsh也出现了这样的情况</p>
+				</div>
+			</div>
+		</div>
+		<div class="fixed"></div>
+
+</li><!-- #comment-## -->
+	<li class="comment regularcomment" id="comment-1567792">
+		<div class="author">
+			<div class="pic">
+				<img alt='' src='http://1.gravatar.com/avatar/3adf555ed4385486d69b2422b5f2dc89?s=32&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32 photo' height='32' width='32' />			</div>
+			<div class="name">
+									<span id="commentauthor-1567792">
+				
+				yx
+									</span>
+							</div>
+		</div>
+
+		<div class="info">
+			<div class="date">
+				2014年10月10日15:35					 | <a href="#comment-1567792">#9</a>
+			</div>
+			<div class="act">
+				<a href="javascript:void(0);" onclick="MGJS_CMT.reply('commentauthor-1567792', 'comment-1567792', 'comment');">回复</a> | 
+				<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-1567792', 'comment-1567792', 'commentbody-1567792', 'comment');">引用</a>
+							</div>
+			<div class="fixed"></div>
+			<div class="content">
+				
+				<div id="commentbody-1567792">
+					<p>这讲解水平，简直让人不懂都不好意思了，简单到令人发指。</p>
+				</div>
+			</div>
+		</div>
+		<div class="fixed"></div>
+
+</li><!-- #comment-## -->
+	<li class="comment regularcomment" id="comment-1587519">
+		<div class="author">
+			<div class="pic">
+				<img alt='' src='http://0.gravatar.com/avatar/e8442bf9c82deadda6aebc706bd38ac4?s=32&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32 photo' height='32' width='32' />			</div>
+			<div class="name">
+									<span id="commentauthor-1587519">
+				
+				jessy
+									</span>
+							</div>
+		</div>
+
+		<div class="info">
+			<div class="date">
+				2014年10月30日00:11					 | <a href="#comment-1587519">#10</a>
+			</div>
+			<div class="act">
+				<a href="javascript:void(0);" onclick="MGJS_CMT.reply('commentauthor-1587519', 'comment-1587519', 'comment');">回复</a> | 
+				<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-1587519', 'comment-1587519', 'commentbody-1587519', 'comment');">引用</a>
+							</div>
+			<div class="fixed"></div>
+			<div class="content">
+				
+				<div id="commentbody-1587519">
+					<p>为什么把printf语句放到fork语句上面也还是输出8次呢，第一次fork出来的子进程没有继承父进程的缓冲区呢。</p>
+				</div>
+			</div>
+		</div>
+		<div class="fixed"></div>
+
+</li><!-- #comment-## -->
+	<li class="comment regularcomment" id="comment-1612404">
+		<div class="author">
+			<div class="pic">
+				<img alt='' src='http://0.gravatar.com/avatar/eba0021f9e1fa7580099a6303d9b618f?s=32&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32 photo' height='32' width='32' />			</div>
+			<div class="name">
+									<span id="commentauthor-1612404">
+				
+				ten
+									</span>
+							</div>
+		</div>
+
+		<div class="info">
+			<div class="date">
+				2014年11月24日09:39					 | <a href="#comment-1612404">#11</a>
+			</div>
+			<div class="act">
+				<a href="javascript:void(0);" onclick="MGJS_CMT.reply('commentauthor-1612404', 'comment-1612404', 'comment');">回复</a> | 
+				<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-1612404', 'comment-1612404', 'commentbody-1612404', 'comment');">引用</a>
+							</div>
+			<div class="fixed"></div>
+			<div class="content">
+				
+				<div id="commentbody-1612404">
+					<p><a href="#comment-1587519" rel="nofollow">@jessy </a><br />
+还是会复制的。比如执行进程是A，A进程printf一次，再fork出B进程（由于缓存区会复制，现在有2个，A和B的缓冲区分别有1个）。接着A和B进程都执行i++和printf（现在有4个，A和B的缓冲区分别有2个）。再fork，A进程fork出C进程，由于A缓冲区有两个，所以C的缓冲区也有两个。同理，B进程fork出D进程，D缓冲区也有两个（现在合起来有8个）。fork结束后，四个进程都执行i++，由于i=2，所以都退出for。</p>
+				</div>
+			</div>
+		</div>
+		<div class="fixed"></div>
+
+</li><!-- #comment-## -->
+	<li class="comment regularcomment" id="comment-1617516">
+		<div class="author">
+			<div class="pic">
+				<img alt='' src='http://0.gravatar.com/avatar/0437cba9dc6be5cdaa594af7fea38343?s=32&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32 photo' height='32' width='32' />			</div>
+			<div class="name">
+									<span id="commentauthor-1617516">
+				
+				cbsheng
+									</span>
+							</div>
+		</div>
+
+		<div class="info">
+			<div class="date">
+				2014年11月30日10:40					 | <a href="#comment-1617516">#12</a>
+			</div>
+			<div class="act">
+				<a href="javascript:void(0);" onclick="MGJS_CMT.reply('commentauthor-1617516', 'comment-1617516', 'comment');">回复</a> | 
+				<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-1617516', 'comment-1617516', 'commentbody-1617516', 'comment');">引用</a>
+							</div>
+			<div class="fixed"></div>
+			<div class="content">
+				
+				<div id="commentbody-1617516">
+					<p>如果fork是写时复制的话，printf的buffer就不会复制过去了吧？</p>
+				</div>
+			</div>
+		</div>
+		<div class="fixed"></div>
+
+</li><!-- #comment-## -->
+	<li class="comment regularcomment" id="comment-1621552">
+		<div class="author">
+			<div class="pic">
+				<img alt='' src='http://1.gravatar.com/avatar/7b04b7f28cad0058609b58af122a2a0c?s=32&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32 photo' height='32' width='32' />			</div>
+			<div class="name">
+									<span id="commentauthor-1621552">
+				
+				jxncjl
+									</span>
+							</div>
+		</div>
+
+		<div class="info">
+			<div class="date">
+				2014年12月5日08:49					 | <a href="#comment-1621552">#13</a>
+			</div>
+			<div class="act">
+				<a href="javascript:void(0);" onclick="MGJS_CMT.reply('commentauthor-1621552', 'comment-1621552', 'comment');">回复</a> | 
+				<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-1621552', 'comment-1621552', 'commentbody-1621552', 'comment');">引用</a>
+							</div>
+			<div class="fixed"></div>
+			<div class="content">
+				
+				<div id="commentbody-1621552">
+					<p><a href="#comment-1617516" rel="nofollow">@cbsheng </a><br />
+fork的COW是当需要修改内容的时候，子进程才能拷贝父进程的内容，同样的道理，当子进程需要printf时，需要修改缓存区，所以从父进程那拷贝过去的。</p>
+				</div>
+			</div>
+		</div>
+		<div class="fixed"></div>
+
+</li><!-- #comment-## -->
+	</ol>
+	<!-- comments END -->
+
+		<div id="commentnavi">
+			<span class="pages">评论分页</span>
+			<div id="commentpager">
+				<a class="prev page-numbers" href="http://coolshell.cn/articles/7965.html/comment-page-2#comments">&laquo; 上一页</a>
+<a class='page-numbers' href='http://coolshell.cn/articles/7965.html/comment-page-1#comments'>1</a>
+<a class='page-numbers' href='http://coolshell.cn/articles/7965.html/comment-page-2#comments'>2</a>
+<span class='page-numbers current'>3</span>				<span id="cp_post_id">7965</span>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+	<!-- trackbacks START -->
+			<ol id="thetrackbacks">
+												<li class="trackback">
+						<div class="date">
+							2012年8月8日16:15							 | <a href="#comment-201300">#1</a>
+						</div>
+						<div class="act">
+													</div>
+						<div class="fixed"></div>
+						<div class="title">
+							<a href="http://code.zc4u.com/articles/5469.html">
+								fork()从的一些测试 | 编程·早晨							</a>
+						</div>
+					</li>
+									<li class="trackback">
+						<div class="date">
+							2012年8月17日02:10							 | <a href="#comment-201684">#2</a>
+						</div>
+						<div class="act">
+													</div>
+						<div class="fixed"></div>
+						<div class="title">
+							<a href="http://hongdow.com/%e7%b3%bb%e7%bb%9f%e8%b0%83%e7%94%a8%e4%b9%8bfork%e7%af%87/">
+								[基础强化]系统调用之fork篇 | 代码消得人憔悴							</a>
+						</div>
+					</li>
+									<li class="trackback">
+						<div class="date">
+							2012年8月20日19:21							 | <a href="#comment-201881">#3</a>
+						</div>
+						<div class="act">
+													</div>
+						<div class="fixed"></div>
+						<div class="title">
+							<a href="http://digest.definite.name/gcc-in-c-to-compile.html">
+								Definite Digest &raquo; GCC 用 C++ 来编译							</a>
+						</div>
+					</li>
+									<li class="trackback">
+						<div class="date">
+							2012年10月2日23:14							 | <a href="#comment-203224">#4</a>
+						</div>
+						<div class="act">
+													</div>
+						<div class="fixed"></div>
+						<div class="title">
+							<a href="http://zrj.me/archives/599">
+								linux 下 fork 后的文件资源处理问题 | ZRJ							</a>
+						</div>
+					</li>
+									<li class="trackback">
+						<div class="date">
+							2012年10月10日23:39							 | <a href="#comment-203657">#5</a>
+						</div>
+						<div class="act">
+													</div>
+						<div class="fixed"></div>
+						<div class="title">
+							<a href="http://blog.apprk.com/archives/23640">
+								2013 网易校园招聘试题考点 | EvilCode 邪恶代码							</a>
+						</div>
+					</li>
+									<li class="trackback">
+						<div class="date">
+							2012年10月15日13:46							 | <a href="#comment-204360">#6</a>
+						</div>
+						<div class="act">
+													</div>
+						<div class="fixed"></div>
+						<div class="title">
+							<a href="http://blog.apprk.com/archives/25247">
+								关于进程创建三，完结篇 | EvilCode 邪恶代码							</a>
+						</div>
+					</li>
+									<li class="trackback">
+						<div class="date">
+							2012年10月27日10:13							 | <a href="#comment-207306">#7</a>
+						</div>
+						<div class="act">
+													</div>
+						<div class="fixed"></div>
+						<div class="title">
+							<a href="http://www.cloudmouse.net/?p=34">
+								转载：一个fork的面试题 | CloudMouse-Info Flow							</a>
+						</div>
+					</li>
+									<li class="trackback">
+						<div class="date">
+							2012年10月29日00:26							 | <a href="#comment-207925">#8</a>
+						</div>
+						<div class="act">
+													</div>
+						<div class="fixed"></div>
+						<div class="title">
+							<a href="http://ifthiskills.me/?p=689">
+								关于 fork 的笔试题 | Sisyphus happy							</a>
+						</div>
+					</li>
+									<li class="trackback">
+						<div class="date">
+							2012年11月14日08:53							 | <a href="#comment-215580">#9</a>
+						</div>
+						<div class="act">
+													</div>
+						<div class="fixed"></div>
+						<div class="title">
+							<a href="http://songtianyi.info/?p=1162">
+								2013校园招聘笔试题整理 &#8211; songtianyi							</a>
+						</div>
+					</li>
+									<li class="trackback">
+						<div class="date">
+							2012年11月22日15:43							 | <a href="#comment-219292">#10</a>
+						</div>
+						<div class="act">
+													</div>
+						<div class="fixed"></div>
+						<div class="title">
+							<a href="http://shaozhuqing.com/?p=1669">
+								百度人搜,阿里巴巴,腾讯,华为,小米,搜狗,笔试面试 &laquo; 邵珠庆的博客							</a>
+						</div>
+					</li>
+									<li class="trackback">
+						<div class="date">
+							2013年1月9日09:34							 | <a href="#comment-261023">#11</a>
+						</div>
+						<div class="act">
+													</div>
+						<div class="fixed"></div>
+						<div class="title">
+							<a href="http://www.ubuntuhome.com/should-konw-linux-tips.html">
+								应该知道的Linux技巧 | Ubuntu Home							</a>
+						</div>
+					</li>
+									<li class="trackback">
+						<div class="date">
+							2013年1月9日15:07							 | <a href="#comment-261275">#12</a>
+						</div>
+						<div class="act">
+													</div>
+						<div class="fixed"></div>
+						<div class="title">
+							<a href="http://www.domyself.me/archives/some-linux-kits-should-know/">
+								DoMyself &raquo; Blog Archive &raquo; 应该知道的Linux技巧							</a>
+						</div>
+					</li>
+									<li class="trackback">
+						<div class="date">
+							2013年1月9日22:33							 | <a href="#comment-261672">#13</a>
+						</div>
+						<div class="act">
+													</div>
+						<div class="fixed"></div>
+						<div class="title">
+							<a href="http://gjkiss.info/2013/01/%e5%ba%94%e8%af%a5%e7%9f%a5%e9%81%93%e7%9a%84linux%e6%8a%80%e5%b7%a7">
+								牧场勿语 &raquo; 应该知道的Linux技巧							</a>
+						</div>
+					</li>
+									<li class="trackback">
+						<div class="date">
+							2013年1月10日23:12							 | <a href="#comment-262896">#14</a>
+						</div>
+						<div class="act">
+													</div>
+						<div class="fixed"></div>
+						<div class="title">
+							<a href="http://argcandargv.com/archives/968">
+								应该知道的Linux技巧 | argc &amp;&amp; argv							</a>
+						</div>
+					</li>
+									<li class="trackback">
+						<div class="date">
+							2013年1月12日11:59							 | <a href="#comment-264547">#15</a>
+						</div>
+						<div class="act">
+													</div>
+						<div class="fixed"></div>
+						<div class="title">
+							<a href="http://www.zoio.info/basic/os/225.html">
+								应该知道的Linux技巧 | 贱八哥技术网							</a>
+						</div>
+					</li>
+									<li class="trackback">
+						<div class="date">
+							2013年1月13日15:30							 | <a href="#comment-265748">#16</a>
+						</div>
+						<div class="act">
+													</div>
+						<div class="fixed"></div>
+						<div class="title">
+							<a href="http://blog.maxrocky.cn/201301/334.html">
+								你应该知道的一些 Linux 技巧 zz | MAXROCKY 创新 BLOG							</a>
+						</div>
+					</li>
+									<li class="trackback">
+						<div class="date">
+							2013年2月1日10:15							 | <a href="#comment-284008">#17</a>
+						</div>
+						<div class="act">
+													</div>
+						<div class="fixed"></div>
+						<div class="title">
+							<a href="http://coolshell.cn/articles/8961.html">
+								从面向对象的设计模式看软件设计 | 酷壳 &#8211; CoolShell.cn							</a>
+						</div>
+					</li>
+									<li class="trackback">
+						<div class="date">
+							2013年2月1日14:49							 | <a href="#comment-284159">#18</a>
+						</div>
+						<div class="act">
+													</div>
+						<div class="fixed"></div>
+						<div class="title">
+							<a href="http://digest.definite.name/cong-mian-xiang-dui-xiang-di-she-ji-mo-shi-kan-ruan-jian-she-ji.html">
+								Definite Digest &raquo; 从面向对象的设计模式看软件设计							</a>
+						</div>
+					</li>
+									<li class="trackback">
+						<div class="date">
+							2013年2月1日18:32							 | <a href="#comment-284288">#19</a>
+						</div>
+						<div class="act">
+													</div>
+						<div class="fixed"></div>
+						<div class="title">
+							<a href="http://read.guoruei.net/archives/1451">
+								read.guoruEi &raquo; Blog Archive &raquo; 从面向对象的设计模式看软件设计							</a>
+						</div>
+					</li>
+									<li class="trackback">
+						<div class="date">
+							2013年2月17日15:47							 | <a href="#comment-293028">#20</a>
+						</div>
+						<div class="act">
+													</div>
+						<div class="fixed"></div>
+						<div class="title">
+							<a href="http://isee.sinaapp.com/?p=94">
+								I-see &raquo; 应该知道的Linux技巧							</a>
+						</div>
+					</li>
+									<li class="trackback">
+						<div class="date">
+							2013年2月22日18:15							 | <a href="#comment-295966">#21</a>
+						</div>
+						<div class="act">
+													</div>
+						<div class="fixed"></div>
+						<div class="title">
+							<a href="http://jaring.me/?p=1186">
+								sed 简明教程 | Jaring&#039;s blog							</a>
+						</div>
+					</li>
+									<li class="trackback">
+						<div class="date">
+							2013年4月6日13:15							 | <a href="#comment-322151">#22</a>
+						</div>
+						<div class="act">
+													</div>
+						<div class="fixed"></div>
+						<div class="title">
+							<a href="http://www.crazyshell.net/?p=162">
+								应该知道的Linux技巧&#8211;陈皓 | CrazyShell-疯狂的贝壳							</a>
+						</div>
+					</li>
+									<li class="trackback">
+						<div class="date">
+							2013年4月28日10:59							 | <a href="#comment-362084">#23</a>
+						</div>
+						<div class="act">
+													</div>
+						<div class="fixed"></div>
+						<div class="title">
+							<a href="http://www.520lily.com/html/816.html">
+								Unix考古记：一个“遗失”的shell | 午后小憩							</a>
+						</div>
+					</li>
+									<li class="trackback">
+						<div class="date">
+							2013年4月30日14:28							 | <a href="#comment-371460">#24</a>
+						</div>
+						<div class="act">
+													</div>
+						<div class="fixed"></div>
+						<div class="title">
+							<a href="http://www.520lily.com/html/846.html">
+								sed 简明教程 | 午后小憩							</a>
+						</div>
+					</li>
+									<li class="trackback">
+						<div class="date">
+							2013年6月5日09:45							 | <a href="#comment-527664">#25</a>
+						</div>
+						<div class="act">
+													</div>
+						<div class="fixed"></div>
+						<div class="title">
+							<a href="http://www.w3c.com.cn/%e5%85%b3%e4%ba%8elinux-fork-%e5%92%8c-printf-%e7%9a%84%e9%97%ae%e9%a2%98">
+								关于LINUX fork 和 printf 的问题 &#8211; Linux &#8211; 开发者问答							</a>
+						</div>
+					</li>
+									<li class="trackback">
+						<div class="date">
+							2013年6月14日15:25							 | <a href="#comment-548205">#26</a>
+						</div>
+						<div class="act">
+													</div>
+						<div class="fixed"></div>
+						<div class="title">
+							<a href="http://www.golang.name/linux_skill_tutorial/">
+								应该知道的Linux技巧 | 小书童							</a>
+						</div>
+					</li>
+									<li class="trackback">
+						<div class="date">
+							2013年6月21日09:26							 | <a href="#comment-561405">#27</a>
+						</div>
+						<div class="act">
+													</div>
+						<div class="fixed"></div>
+						<div class="title">
+							<a href="http://www.w3c.com.cn/%e5%85%b3%e4%ba%8efolk%e7%9a%84%e4%b8%80%e4%b8%aa%e9%97%ae%e9%a2%98">
+								关于folk的一个问题 &#8211; 编程问答 &#8211; 开发者第1629091个问答							</a>
+						</div>
+					</li>
+									<li class="trackback">
+						<div class="date">
+							2013年7月12日17:21							 | <a href="#comment-591697">#28</a>
+						</div>
+						<div class="act">
+													</div>
+						<div class="fixed"></div>
+						<div class="title">
+							<a href="http://www.techpot.net/archives/48924">
+								[转] 一个fork的面试题 &laquo; T客网 ︱ Techpot							</a>
+						</div>
+					</li>
+									<li class="trackback">
+						<div class="date">
+							2013年7月15日11:55							 | <a href="#comment-594384">#29</a>
+						</div>
+						<div class="act">
+													</div>
+						<div class="fixed"></div>
+						<div class="title">
+							<a href="http://itblog.cc/447.html">
+								二叉树迭代器算法 – IT技术博客大全							</a>
+						</div>
+					</li>
+									<li class="trackback">
+						<div class="date">
+							2013年7月19日10:13							 | <a href="#comment-599534">#30</a>
+						</div>
+						<div class="act">
+													</div>
+						<div class="fixed"></div>
+						<div class="title">
+							<a href="http://www.progressing.info/?p=127">
+								每天一道面试题：源代码和编译结果（2） | 拼音同学的博客							</a>
+						</div>
+					</li>
+									<li class="trackback">
+						<div class="date">
+							2013年7月28日11:17							 | <a href="#comment-616411">#31</a>
+						</div>
+						<div class="act">
+													</div>
+						<div class="fixed"></div>
+						<div class="title">
+							<a href="http://www.r66r.net/?p=2061">
+								九月十月百度人搜，阿里巴巴，腾讯华为笔试面试八十题(第331-410题) | r6							</a>
+						</div>
+					</li>
+									<li class="trackback">
+						<div class="date">
+							2013年10月20日08:01							 | <a href="#comment-829982">#32</a>
+						</div>
+						<div class="act">
+													</div>
+						<div class="fixed"></div>
+						<div class="title">
+							<a href="http://yoese.com/?p=1748">
+								C语言全局变量那些事儿 | 有益							</a>
+						</div>
+					</li>
+									<li class="trackback">
+						<div class="date">
+							2013年10月20日08:03							 | <a href="#comment-829992">#33</a>
+						</div>
+						<div class="act">
+													</div>
+						<div class="fixed"></div>
+						<div class="title">
+							<a href="http://yoese.com/?p=1753">
+								数据即代码：元驱动编程 | 有益							</a>
+						</div>
+					</li>
+									<li class="trackback">
+						<div class="date">
+							2013年10月27日15:24							 | <a href="#comment-852541">#34</a>
+						</div>
+						<div class="act">
+													</div>
+						<div class="fixed"></div>
+						<div class="title">
+							<a href="http://demo.zengine.info/?p=29">
+								数据即代码：元驱动编程 | zengine							</a>
+						</div>
+					</li>
+									<li class="trackback">
+						<div class="date">
+							2013年11月10日16:14							 | <a href="#comment-909445">#35</a>
+						</div>
+						<div class="act">
+													</div>
+						<div class="fixed"></div>
+						<div class="title">
+							<a href="http://www.multiprocess.net/?p=83">
+								应该知道的Linux技巧 | multiprocess							</a>
+						</div>
+					</li>
+									<li class="trackback">
+						<div class="date">
+							2013年11月11日09:49							 | <a href="#comment-912996">#36</a>
+						</div>
+						<div class="act">
+													</div>
+						<div class="fixed"></div>
+						<div class="title">
+							<a href="http://codeplayer.org/2013/11/?p=226">
+								应该知道的Linux技巧 | codeplayer							</a>
+						</div>
+					</li>
+									<li class="trackback">
+						<div class="date">
+							2013年11月11日16:02							 | <a href="#comment-914195">#37</a>
+						</div>
+						<div class="act">
+													</div>
+						<div class="fixed"></div>
+						<div class="title">
+							<a href="http://www.multiprocess.net/archives/2272">
+								C语言全局变量那些事儿Multiprocess | Multiprocess							</a>
+						</div>
+					</li>
+									<li class="trackback">
+						<div class="date">
+							2013年12月3日11:06							 | <a href="#comment-1018396">#38</a>
+						</div>
+						<div class="act">
+													</div>
+						<div class="fixed"></div>
+						<div class="title">
+							<a href="http://www.kookyx.com/blog/?p=102">
+								[转]Linux基础学习技巧 | 古辛							</a>
+						</div>
+					</li>
+									<li class="trackback">
+						<div class="date">
+							2014年2月24日10:26							 | <a href="#comment-1304759">#39</a>
+						</div>
+						<div class="act">
+													</div>
+						<div class="fixed"></div>
+						<div class="title">
+							<a href="http://www.javablogs.org/?p=270">
+								由苹果的低级Bug想到的 | java博客，java教程							</a>
+						</div>
+					</li>
+									<li class="trackback">
+						<div class="date">
+							2014年2月27日17:40							 | <a href="#comment-1315239">#40</a>
+						</div>
+						<div class="act">
+													</div>
+						<div class="fixed"></div>
+						<div class="title">
+							<a href="http://blog.stayw.com/index.php/interview-all/">
+								面试题 | 博文							</a>
+						</div>
+					</li>
+									<li class="trackback">
+						<div class="date">
+							2014年3月5日22:50							 | <a href="#comment-1335694">#41</a>
+						</div>
+						<div class="act">
+													</div>
+						<div class="fixed"></div>
+						<div class="title">
+							<a href="http://baocandywu.sinaapp.com/?p=34">
+								为梦想而生 &raquo; 九月十月百度人搜，阿里巴巴，腾讯华为笔试面试八十题(第331-410题)							</a>
+						</div>
+					</li>
+									<li class="trackback">
+						<div class="date">
+							2014年3月17日01:21							 | <a href="#comment-1383840">#42</a>
+						</div>
+						<div class="act">
+													</div>
+						<div class="fixed"></div>
+						<div class="title">
+							<a href="http://demo.zengine.info/?p=810">
+								一个浮点数跨平台产生的问题 | zengine							</a>
+						</div>
+					</li>
+									<li class="trackback">
+						<div class="date">
+							2014年4月8日13:11							 | <a href="#comment-1417459">#43</a>
+						</div>
+						<div class="act">
+													</div>
+						<div class="fixed"></div>
+						<div class="title">
+							<a href="http://www.21ops.com/linux/23634.html">
+								linux技巧大搜集 &#8211; 新世纪Linux社区							</a>
+						</div>
+					</li>
+									<li class="trackback">
+						<div class="date">
+							2014年4月22日07:33							 | <a href="#comment-1442825">#44</a>
+						</div>
+						<div class="act">
+													</div>
+						<div class="fixed"></div>
+						<div class="title">
+							<a href="http://www.xdhcn.com/?p=982">
+								C语言的整型溢出问题 | 星达红							</a>
+						</div>
+					</li>
+									<li class="trackback">
+						<div class="date">
+							2014年4月30日14:19							 | <a href="#comment-1450442">#45</a>
+						</div>
+						<div class="act">
+													</div>
+						<div class="fixed"></div>
+						<div class="title">
+							<a href="http://www.kongyuan.org/wp/2014/01/26/archlinux-cmd/">
+								ArchLinux-CMD | 小憩幻楼							</a>
+						</div>
+					</li>
+									<li class="trackback">
+						<div class="date">
+							2014年5月27日12:40							 | <a href="#comment-1470315">#46</a>
+						</div>
+						<div class="act">
+													</div>
+						<div class="fixed"></div>
+						<div class="title">
+							<a href="http://bfire201314.sinaapp.com/archives/145">
+								应该知道的Linux技巧 &#8211; bfire							</a>
+						</div>
+					</li>
+									<li class="trackback">
+						<div class="date">
+							2014年6月17日14:27							 | <a href="#comment-1482848">#47</a>
+						</div>
+						<div class="act">
+													</div>
+						<div class="fixed"></div>
+						<div class="title">
+							<a href="http://ls120.net/ying-gai-zhi-dao-de-linux-ji-qiao.html">
+								应该知道的Linux技巧 | Les&#039;s Note							</a>
+						</div>
+					</li>
+									<li class="trackback">
+						<div class="date">
+							2014年9月21日20:06							 | <a href="#comment-1541618">#48</a>
+						</div>
+						<div class="act">
+													</div>
+						<div class="fixed"></div>
+						<div class="title">
+							<a href="http://bubble.xuejianbin.com/?p=2326">
+								Linus：利用二级指针删除单向链表 | news snack							</a>
+						</div>
+					</li>
+									<li class="trackback">
+						<div class="date">
+							2014年9月28日07:57							 | <a href="#comment-1557446">#49</a>
+						</div>
+						<div class="act">
+													</div>
+						<div class="fixed"></div>
+						<div class="title">
+							<a href="http://coolshell.cn/articles/11973.html">
+								bash代码注入的安全漏洞 | 酷 壳 &#8211; CoolShell.cn							</a>
+						</div>
+					</li>
+									<li class="trackback">
+						<div class="date">
+							2014年9月28日14:11							 | <a href="#comment-1557697">#50</a>
+						</div>
+						<div class="act">
+													</div>
+						<div class="fixed"></div>
+						<div class="title">
+							<a href="http://blog.duckbill-ideas.com/20140928/bash%e4%bb%a3%e7%a0%81%e6%b3%a8%e5%85%a5%e7%9a%84%e5%ae%89%e5%85%a8%e6%bc%8f%e6%b4%9e/">
+								bash代码注入的安全漏洞 | 鸭嘴兽创意博客							</a>
+						</div>
+					</li>
+									<li class="trackback">
+						<div class="date">
+							2014年9月28日16:26							 | <a href="#comment-1557757">#51</a>
+						</div>
+						<div class="act">
+													</div>
+						<div class="fixed"></div>
+						<div class="title">
+							<a href="http://www.52au3.com/security/vulnerability/bash-shellshock.html">
+								bash代码注入漏洞[转] | 进无止境							</a>
+						</div>
+					</li>
+									<li class="trackback">
+						<div class="date">
+							2014年9月29日08:01							 | <a href="#comment-1558215">#52</a>
+						</div>
+						<div class="act">
+													</div>
+						<div class="fixed"></div>
+						<div class="title">
+							<a href="http://www.yo2s1.com/?p=56">
+								不二							</a>
+						</div>
+					</li>
+									<li class="trackback">
+						<div class="date">
+							2014年9月29日09:49							 | <a href="#comment-1558276">#53</a>
+						</div>
+						<div class="act">
+													</div>
+						<div class="fixed"></div>
+						<div class="title">
+							<a href="http://geekjayvic.sinaapp.com/bash%e4%bb%a3%e7%a0%81%e6%b3%a8%e5%85%a5%e7%9a%84%e5%ae%89%e5%85%a8%e6%bc%8f%e6%b4%9e%ef%bc%88%e8%bd%ac%e8%bd%bd%ef%bc%89/">
+								bash代码注入的安全漏洞（转载） | Jayvic&#039;s Space							</a>
+						</div>
+					</li>
+									<li class="trackback">
+						<div class="date">
+							2014年9月29日11:07							 | <a href="#comment-1558320">#54</a>
+						</div>
+						<div class="act">
+													</div>
+						<div class="fixed"></div>
+						<div class="title">
+							<a href="http://www.leoncode.com/archives/167">
+								bash代码注入的安全漏洞 | Leon的代码世界							</a>
+						</div>
+					</li>
+									<li class="trackback">
+						<div class="date">
+							2014年9月29日12:08							 | <a href="#comment-1558367">#55</a>
+						</div>
+						<div class="act">
+													</div>
+						<div class="fixed"></div>
+						<div class="title">
+							<a href="http://geekjayvic.sinaapp.com/%e4%b8%80%e4%b8%aafork%e5%bc%95%e5%8f%91%e7%9a%84%e8%a1%80%e6%a1%88/">
+								一个fork引发的血案 | Jayvic&#039;s Space							</a>
+						</div>
+					</li>
+									<li class="trackback">
+						<div class="date">
+							2014年9月30日20:10							 | <a href="#comment-1559357">#56</a>
+						</div>
+						<div class="act">
+													</div>
+						<div class="fixed"></div>
+						<div class="title">
+							<a href="http://1.kaiyuanshengshi.sinaapp.com/?p=20159">
+								bash代码注入的安全漏洞							</a>
+						</div>
+					</li>
+									<li class="trackback">
+						<div class="date">
+							2014年10月2日22:06							 | <a href="#comment-1560852">#57</a>
+						</div>
+						<div class="act">
+													</div>
+						<div class="fixed"></div>
+						<div class="title">
+							<a href="http://xss_whale.jd-app.com/?p=45">
+								[转]bash代码注入的安全漏洞 &#8211; 安全自留地							</a>
+						</div>
+					</li>
+									<li class="trackback">
+						<div class="date">
+							2014年10月5日11:01							 | <a href="#comment-1562788">#58</a>
+						</div>
+						<div class="act">
+													</div>
+						<div class="fixed"></div>
+						<div class="title">
+							<a href="http://www.jaring.me/?p=1493">
+								bash代码注入的安全漏洞 &#8211; Jaring&#039;s blog							</a>
+						</div>
+					</li>
+									<li class="trackback">
+						<div class="date">
+							2014年10月5日22:25							 | <a href="#comment-1563280">#59</a>
+						</div>
+						<div class="act">
+													</div>
+						<div class="fixed"></div>
+						<div class="title">
+							<a href="http://erliang.me/2014/10/bash%e4%bb%a3%e7%a0%81%e6%b3%a8%e5%85%a5%e7%9a%84%e5%ae%89%e5%85%a8%e6%bc%8f%e6%b4%9e/">
+								bash代码注入的安全漏洞 | 二两丶的博客							</a>
+						</div>
+					</li>
+									<li class="trackback">
+						<div class="date">
+							2014年10月11日19:37							 | <a href="#comment-1568881">#60</a>
+						</div>
+						<div class="act">
+													</div>
+						<div class="fixed"></div>
+						<div class="title">
+							<a href="https://watchdata-islab.rhcloud.com/2014/10/bash-shellshock/">
+								Bash代码注入的安全漏洞 | Watchdata ISLab							</a>
+						</div>
+					</li>
+									<li class="trackback">
+						<div class="date">
+							2014年10月14日14:11							 | <a href="#comment-1571705">#61</a>
+						</div>
+						<div class="act">
+													</div>
+						<div class="fixed"></div>
+						<div class="title">
+							<a href="http://www.cyberchina.org/2014/10/01/3661.html">
+								bash代码注入的安全漏洞 | 中国互联网评论							</a>
+						</div>
+					</li>
+									<li class="trackback">
+						<div class="date">
+							2014年10月15日15:45							 | <a href="#comment-1572623">#62</a>
+						</div>
+						<div class="act">
+													</div>
+						<div class="fixed"></div>
+						<div class="title">
+							<a href="http://www.xdhcn.com/?p=1020">
+								bash代码注入的安全漏洞 | 星达红							</a>
+						</div>
+					</li>
+									<li class="trackback">
+						<div class="date">
+							2014年10月17日14:34							 | <a href="#comment-1574878">#63</a>
+						</div>
+						<div class="act">
+													</div>
+						<div class="fixed"></div>
+						<div class="title">
+							<a href="http://www.cnsecx.com/archives/3460.html">
+								详细解析：bash代码注入的安全漏洞 | 起点草根							</a>
+						</div>
+					</li>
+									<li class="trackback">
+						<div class="date">
+							2014年11月19日09:38							 | <a href="#comment-1608095">#64</a>
+						</div>
+						<div class="act">
+													</div>
+						<div class="fixed"></div>
+						<div class="title">
+							<a href="http://www.coolside.cn/?p=27">
+								bash代码注入的安全漏洞 | 酷思-CoolSide							</a>
+						</div>
+					</li>
+									<li class="trackback">
+						<div class="date">
+							2014年11月21日00:48							 | <a href="#comment-1609547">#65</a>
+						</div>
+						<div class="act">
+													</div>
+						<div class="fixed"></div>
+						<div class="title">
+							<a href="http://coolshell.cn/articles/12103.html">
+								vfork 的挂掉的一个问题 | 酷 壳 &#8211; CoolShell.cn							</a>
+						</div>
+					</li>
+									<li class="trackback">
+						<div class="date">
+							2014年11月21日03:34							 | <a href="#comment-1609637">#66</a>
+						</div>
+						<div class="act">
+													</div>
+						<div class="fixed"></div>
+						<div class="title">
+							<a href="http://1.kaiyuanshengshi.sinaapp.com/?p=20308">
+								vfork 的挂掉的一个问题							</a>
+						</div>
+					</li>
+									<li class="trackback">
+						<div class="date">
+							2014年11月21日13:44							 | <a href="#comment-1609998">#67</a>
+						</div>
+						<div class="act">
+													</div>
+						<div class="fixed"></div>
+						<div class="title">
+							<a href="http://1.kaiyuanshengshi.sinaapp.com/?p=20309">
+								vfork 挂掉的一个问题							</a>
+						</div>
+					</li>
+									<li class="trackback">
+						<div class="date">
+							2014年11月22日04:37							 | <a href="#comment-1610661">#68</a>
+						</div>
+						<div class="act">
+													</div>
+						<div class="fixed"></div>
+						<div class="title">
+							<a href="http://www.xdhcn.com/?p=1025">
+								vfork 挂掉的一个问题 | 星达红							</a>
+						</div>
+					</li>
+				
+					</ol>
+		<div class="fixed"></div>
+	<!-- trackbacks END -->
+</div>
+
+</div>
+
+	<form action="http://coolshell.cn/wp-comments-post.php" method="post" id="commentform">
+	<div id="respond">
+
+					
+			<div id="author_info">
+				<div class="row">
+					<input type="text" name="author" id="author" class="textfield" value="" size="24" tabindex="1" />
+					<label for="author" class="small">昵称 (必填)</label>
+				</div>
+				<div class="row">
+					<input type="text" name="email" id="email" class="textfield" value="" size="24" tabindex="2" />
+					<label for="email" class="small">电子邮箱 (我们会为您保密) (必填)</label>
+				</div>
+				<div class="row">
+					<input type="text" name="url" id="url" class="textfield" value="" size="24" tabindex="3" />
+					<label for="url" class="small">网址</label>
+				</div>
+			</div>
+
+			
+		
+		<!-- comment input -->
+		<div class="row">
+			<textarea name="comment" id="comment" tabindex="4" rows="8" cols="50"></textarea>
+		</div>
+
+		<!-- comment submit and rss -->
+		<div id="submitbox">
+			<a class="feed" href="http://coolshell.cn/comments/feed">订阅评论</a>
+			<div class="submitbutton">
+				<input name="submit" type="submit" id="submit" class="button" tabindex="5" value="提交评论" />
+			</div>
+						<input type="hidden" name="comment_post_ID" value="7965" />
+			<div class="fixed"></div>
+		</div>
+
+	</div>
+	<p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="8e836e558d" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="245"/></p>	</form>
+
+	
+
+	<div id="postnavi">
+		<span class="prev"><a href="http://coolshell.cn/articles/7992.html" rel="next">C++的坑真的多吗？</a></span>
+		<span class="next"><a href="http://coolshell.cn/articles/7917.html" rel="prev">各式各样的验证码</a></span>
+		<div class="fixed"></div>
+	</div>
+
+
+<script type='text/javascript'>
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-7486123-1']);
+_gaq.push(['_trackPageview']);
+
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+</script>
+	</div>
+	<!-- main END -->
+
+	
+<!-- sidebar START -->
+<div id="sidebar">
+
+<!-- sidebar north START -->
+<div id="northsidebar" class="sidebar">
+
+	<!-- feeds -->
+	<div class="widget widget_feeds">
+		<div class="content">
+			<div id="subscribe">
+				<a rel="external nofollow" id="feedrss" title="订阅这个博客的文章" href="http://coolshell.cn/feed">订阅</a>
+									<ul id="feed_readers">
+						<li id="google_reader"><a rel="external nofollow" class="reader" title="订阅到 Google" href="http://fusion.google.com/add?feedurl=http://coolshell.cn/feed"><span> Google</span></a></li>
+						<li id="youdao_reader"><a rel="external nofollow" class="reader" title="订阅到有道" href="http://reader.youdao.com/#url=http://coolshell.cn/feed"><span>有道</span></a></li>
+						<li id="xianguo_reader"><a rel="external nofollow" class="reader" title="订阅到鲜果" href="http://www.xianguo.com/subscribe.php?url=http://coolshell.cn/feed"><span>鲜果</span></a></li>
+						<li id="zhuaxia_reader"><a rel="external nofollow" class="reader" title="订阅到抓虾" href="http://www.zhuaxia.com/add_channel.php?url=http://coolshell.cn/feed"><span>抓虾</span></a></li>
+						<li id="yahoo_reader"><a rel="external nofollow" class="reader" title="订阅到 My Yahoo!"	href="http://add.my.yahoo.com/rss?url=http://coolshell.cn/feed"><span> My Yahoo!</span></a></li>
+						<li id="newsgator_reader"><a rel="external nofollow" class="reader" title="订阅到 newsgator"	href="http://www.newsgator.com/ngs/subscriber/subfext.aspx?url=http://coolshell.cn/feed"><span> newsgator</span></a></li>
+						<li id="bloglines_reader"><a rel="external nofollow" class="reader" title="订阅到 Bloglines"	href="http://www.bloglines.com/sub/http://coolshell.cn/feed"><span> Bloglines</span></a></li>
+						<li id="inezha_reader"><a rel="external nofollow" class="reader" title="订阅到哪吒"	href="http://inezha.com/add?url=http://coolshell.cn/feed"><span>哪吒</span></a></li>
+<li id="qq_reader"><a class="reader" title="订阅到QQ Mail" onclick="window.open(this.href);return false;" rel="external nofollow" href="http://mail.qq.com/cgi-bin/feed?u=http://coolshell.cn/feed"><span>
+			QQ Mail            </span></a></li>
+            <li id="douban_reader"><a class="reader" title="订阅到Douban" onclick="window.open(this.href);return false;" rel="external nofollow" href="http://9.douban.com/reader/subscribe?url=http://coolshell.cn/feed"><span>
+			Douban            </span></a></li>
+            <li id="rojo_reader"><a class="reader" title="订阅到Rojo" onclick="window.open(this.href);return false;" rel="external nofollow" href="http://www.rojo.com/add-subscription?resource=http://coolshell.cn/feed"><span>
+            Rojo            </span></a></li>
+            <li id="pageflakes_reader"><a class="reader" title="订阅到Pageflakes" onclick="window.open(this.href);return false;" rel="external nofollow" href="http://www.pageflakes.com/subscribe.aspx?url=http://coolshell.cn/feed"><span>
+            Pageflakes            </span></a></li>
+					</ul>
+							</div>
+							<a id="followme" title="Follow me!" href="http://twitter.com/haoel/">Twitter</a>
+						<div class="fixed"></div>
+		</div>
+	</div>
+
+	<!-- showcase -->
+			<div class="widget">
+							<h3>本站公告</h3>
+						<div class="content">
+				<p align="center" style="background-color: #777;padding: 5px;color: white;font-weight: bold;border: solid 1px black;text-shadow: 0px 0px 3px black;">访问 <a href="http://coolshell.cn/404/" target=_blank style="color: #FFE249;">酷壳404页面</a> 寻找遗失儿童！</p>
+
+<p>酷壳建议大家多使用RSS访问阅读（本站已经是全文输出，推荐使用cloud.feedly.com 或 digg.com）。有相关事宜欢迎电邮：haoel(at)hotmail.com。最后，感谢大家对酷壳的支持和体谅！</p>
+
+<p align=center><b>感谢 <a href=http://42qu.com/ title="42区 找到给你答案的人" target=_blank >42qu.com</a> 为本站提供 <a href="http://vps.42qu.com/" target=_blank  title="42区虚拟主机，卖给创业的你">VPS</a> </b></p>
+
+<!--<div style="background-color: #DA2D03;color: white;text-align: center;padding: 5px;border: solid 1px black;text-shadow: 0px 0px 3px black;"><b>感谢 <a href=http://42qu.com/ title="42区 找到给你答案的人" target=_blank style="color: #E9F300;">42qu.com</a> 为本站提供 <a href="http://vps.42qu.com/" target=_blank style="color: #E9F300;" title="42区虚拟主机，卖给创业的你">VPS</a> </b></div>-->			</div>
+		</div>
+	
+		<div id="recent-posts-2" class="widget widget_recent_entries">		<h3>最新文章</h3>		<ul>
+					<li>
+				<a href="http://coolshell.cn/articles/12136.html">Google Inbox如何跨平台重用代码？</a>
+						</li>
+					<li>
+				<a href="http://coolshell.cn/articles/12103.html">vfork 挂掉的一个问题</a>
+						</li>
+					<li>
+				<a href="http://coolshell.cn/articles/12052.html">Leetcode 编程训练</a>
+						</li>
+					<li>
+				<a href="http://coolshell.cn/articles/12012.html">State Threads 回调终结者</a>
+						</li>
+					<li>
+				<a href="http://coolshell.cn/articles/11973.html">bash代码注入的安全漏洞</a>
+						</li>
+					<li>
+				<a href="http://coolshell.cn/articles/11928.html">互联网之子 &#8211; Aaron Swartz</a>
+						</li>
+					<li>
+				<a href="http://coolshell.cn/articles/11847.html">谜题的答案和活动的心得体会</a>
+						</li>
+					<li>
+				<a href="http://coolshell.cn/articles/11832.html">【活动】解迷题送礼物</a>
+						</li>
+					<li>
+				<a href="http://coolshell.cn/articles/11656.html">开发团队的效率</a>
+						</li>
+					<li>
+				<a href="http://coolshell.cn/articles/11609.html">TCP 的那些事儿（下）</a>
+						</li>
+					<li>
+				<a href="http://coolshell.cn/articles/11564.html">TCP 的那些事儿（上）</a>
+						</li>
+					<li>
+				<a href="http://coolshell.cn/articles/11629.html">「我只是认真」聊聊工匠情怀</a>
+						</li>
+					<li>
+				<a href="http://coolshell.cn/articles/11541.html">面向GC的Java编程</a>
+						</li>
+					<li>
+				<a href="http://coolshell.cn/articles/11466.html">C语言的整型溢出问题</a>
+						</li>
+					<li>
+				<a href="http://coolshell.cn/articles/11454.html">从LongAdder看更高效的无锁实现</a>
+						</li>
+					<li>
+				<a href="http://coolshell.cn/articles/11432.html">从Code Review 谈如何做技术</a>
+						</li>
+					<li>
+				<a href="http://coolshell.cn/articles/11377.html">C语言结构体里的成员数组和指针</a>
+						</li>
+					<li>
+				<a href="http://coolshell.cn/articles/11312.html">无插件Vim编程技巧</a>
+						</li>
+					<li>
+				<a href="http://coolshell.cn/articles/11265.html">Python修饰器的函数式编程</a>
+						</li>
+					<li>
+				<a href="http://coolshell.cn/articles/11235.html">一个浮点数跨平台产生的问题</a>
+						</li>
+					<li>
+				<a href="http://coolshell.cn/articles/11175.html">Java中的CopyOnWrite容器</a>
+						</li>
+					<li>
+				<a href="http://coolshell.cn/articles/11170.html">如何用最有创造力的方式输出42</a>
+						</li>
+					<li>
+				<a href="http://coolshell.cn/articles/11112.html">由苹果的低级Bug想到的</a>
+						</li>
+					<li>
+				<a href="http://coolshell.cn/articles/11094.html">可视化编程</a>
+						</li>
+					<li>
+				<a href="http://coolshell.cn/articles/11021.html">从“黑掉Github”学Web安全开发</a>
+						</li>
+					<li>
+				<a href="http://coolshell.cn/articles/10975.html">一个“蝇量级” C 语言协程库</a>
+						</li>
+					<li>
+				<a href="http://coolshell.cn/articles/10910.html">分布式系统的事务处理</a>
+						</li>
+					<li>
+				<a href="http://coolshell.cn/articles/10822.html">函数式编程</a>
+						</li>
+					<li>
+				<a href="http://coolshell.cn/articles/10804.html">X-Y Problem</a>
+						</li>
+					<li>
+				<a href="http://coolshell.cn/articles/10739.html">Lua简明教程</a>
+						</li>
+				</ul>
+		</div><div id="views-4" class="widget widget_views"><h3>全站热门</h3><ul>
+<li><a href="http://coolshell.cn/articles/4990.html"  title="程序员技术练级攻略 - 498,478 人阅读">程序员技术练级攻略</a></li><li><a href="http://coolshell.cn/articles/5426.html"  title="简明 Vim 练级攻略 - 412,182 人阅读">简明 Vim 练级攻略</a></li><li><a href="http://coolshell.cn/articles/7186.html"  title="做个环保主义的程序员 - 206,897 人阅读">做个环保主义的程序员</a></li><li><a href="http://coolshell.cn/articles/4102.html"  title="如何学好C语言 - 174,235 人阅读">如何学好C语言</a></li><li><a href="http://coolshell.cn/articles/914.html"  title="6个变态的C语言Hello World程序 - 144,998 人阅读">6个变态的C语言Hello World程序</a></li><li><a href="http://coolshell.cn/articles/8883.html"  title="应该知道的Linux技巧 - 141,286 人阅读">应该知道的Linux技巧</a></li><li><a href="http://coolshell.cn/articles/2250.html"  title="&ldquo;21天教你学会C++&rdquo; - 138,914 人阅读">&ldquo;21天教你学会C++&rdquo;</a></li><li><a href="http://coolshell.cn/articles/6470.html"  title="由12306.cn谈谈网站性能技术 - 131,605 人阅读">由12306.cn谈谈网站性能技术</a></li><li><a href="http://coolshell.cn/articles/9308.html"  title="&ldquo;作环保的程序员，从不用百度开始&rdquo; - 126,027 人阅读">&ldquo;作环保的程序员，从不用百度开始&rdquo;</a></li><li><a href="http://coolshell.cn/articles/1870.html"  title="我是怎么招聘程序员的 - 120,908 人阅读">我是怎么招聘程序员的</a></li><li><a href="http://coolshell.cn/articles/10688.html"  title="编程能力与编程年龄 - 118,777 人阅读">编程能力与编程年龄</a></li><li><a href="http://coolshell.cn/articles/7829.html"  title="28个Unix/Linux的命令行神器 - 116,170 人阅读">28个Unix/Linux的命令行神器</a></li><li><a href="http://coolshell.cn/articles/9070.html"  title="AWK 简明教程 - 111,818 人阅读">AWK 简明教程</a></li><li><a href="http://coolshell.cn/articles/3549.html"  title="Android将允许纯C/C++开发应用 - 108,546 人阅读">Android将允许纯C/C++开发应用</a></li><li><a href="http://coolshell.cn/articles/6043.html"  title="Web开发中需要了解的东西 - 106,233 人阅读">Web开发中需要了解的东西</a></li><li><a href="http://coolshell.cn/articles/2287.html"  title="C++ 程序员自信心曲线图 - 99,574 人阅读">C++ 程序员自信心曲线图</a></li><li><a href="http://coolshell.cn/articles/4119.html"  title="如何学好C++语言 - 94,608 人阅读">如何学好C++语言</a></li><li><a href="http://coolshell.cn/articles/355.html"  title="20本最好的Linux免费书籍 - 92,296 人阅读">20本最好的Linux免费书籍</a></li><li><a href="http://coolshell.cn/articles/4758.html"  title="如何写出无法维护的代码 - 92,063 人阅读">如何写出无法维护的代码</a></li><li><a href="http://coolshell.cn/articles/1391.html"  title="编程真难啊 - 91,916 人阅读">编程真难啊</a></li><li><a href="http://coolshell.cn/articles/11564.html"  title="TCP 的那些事儿（上） - 89,751 人阅读">TCP 的那些事儿（上）</a></li><li><a href="http://coolshell.cn/articles/7490.html"  title="性能调优攻略 - 88,570 人阅读">性能调优攻略</a></li><li><a href="http://coolshell.cn/articles/3008.html"  title="Windows编程革命简史 - 87,806 人阅读">Windows编程革命简史</a></li><li><a href="http://coolshell.cn/articles/5761.html"  title="深入理解C语言 - 86,852 人阅读">深入理解C语言</a></li><li><a href="http://coolshell.cn/articles/5701.html"  title="SteveY对Amazon和Google平台的吐槽 - 85,788 人阅读">SteveY对Amazon和Google平台的吐槽</a></li><li><a href="http://coolshell.cn/articles/10217.html"  title="加班与效率 - 82,069 人阅读">加班与效率</a></li><li><a href="http://coolshell.cn/articles/2058.html"  title="各种流行的编程风格 - 81,922 人阅读">各种流行的编程风格</a></li><li><a href="http://coolshell.cn/articles/945.html"  title="C语言的谜题 - 81,667 人阅读">C语言的谜题</a></li><li><a href="http://coolshell.cn/articles/8790.html"  title="程序算法与人生选择 - 80,702 人阅读">程序算法与人生选择</a></li><li><a href="http://coolshell.cn/articles/4429.html"  title="面试题：火车运煤问题 - 80,370 人阅读">面试题：火车运煤问题</a></li></ul>
+</div><div id="text-400151743" class="widget widget_text"><h3>新浪微博</h3>			<div class="textwidget"><iframe width="100%" height="120" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=2&ptype=1&speed=0&skin=1&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=1401880315&verifier=f47cc89f&dpc=1"></iframe></div>
+		</div><div id="tag_cloud-2" class="widget widget_tag_cloud"><h3>标签</h3><div class="tagcloud"><a href='http://coolshell.cn/tag/agile' class='tag-link-17' title='15个话题' style='font-size: 11.8532110092pt;'>agile</a>
+<a href='http://coolshell.cn/tag/ajax' class='tag-link-34' title='11个话题' style='font-size: 10.3119266055pt;'>AJAX</a>
+<a href='http://coolshell.cn/tag/algorithm' class='tag-link-76' title='25个话题' style='font-size: 14.5504587156pt;'>Algorithm</a>
+<a href='http://coolshell.cn/tag/android' class='tag-link-145' title='9个话题' style='font-size: 9.28440366972pt;'>Android</a>
+<a href='http://coolshell.cn/tag/bash' class='tag-link-190' title='9个话题' style='font-size: 9.28440366972pt;'>Bash</a>
+<a href='http://coolshell.cn/tag/c' class='tag-link-59' title='90个话题' style='font-size: 21.6146788991pt;'>C++</a>
+<a href='http://coolshell.cn/tag/coding' class='tag-link-135' title='25个话题' style='font-size: 14.5504587156pt;'>Coding</a>
+<a href='http://coolshell.cn/tag/css' class='tag-link-96' title='21个话题' style='font-size: 13.6513761468pt;'>CSS</a>
+<a href='http://coolshell.cn/tag/database' class='tag-link-109' title='7个话题' style='font-size: 8pt;'>Database</a>
+<a href='http://coolshell.cn/tag/design' class='tag-link-71' title='18个话题' style='font-size: 12.880733945pt;'>Design</a>
+<a href='http://coolshell.cn/tag/design-pattern' class='tag-link-25' title='8个话题' style='font-size: 8.64220183486pt;'>design pattern</a>
+<a href='http://coolshell.cn/tag/ebook' class='tag-link-101' title='15个话题' style='font-size: 11.8532110092pt;'>ebook</a>
+<a href='http://coolshell.cn/tag/flash' class='tag-link-98' title='7个话题' style='font-size: 8pt;'>Flash</a>
+<a href='http://coolshell.cn/tag/game' class='tag-link-125' title='9个话题' style='font-size: 9.28440366972pt;'>Game</a>
+<a href='http://coolshell.cn/tag/go' class='tag-link-238' title='9个话题' style='font-size: 9.28440366972pt;'>Go</a>
+<a href='http://coolshell.cn/tag/google' class='tag-link-32' title='32个话题' style='font-size: 15.9633027523pt;'>Google</a>
+<a href='http://coolshell.cn/tag/html' class='tag-link-38' title='32个话题' style='font-size: 15.9633027523pt;'>HTML</a>
+<a href='http://coolshell.cn/tag/ie' class='tag-link-175' title='10个话题' style='font-size: 9.79816513761pt;'>IE</a>
+<a href='http://coolshell.cn/tag/java' class='tag-link-13' title='48个话题' style='font-size: 18.1467889908pt;'>Java</a>
+<a href='http://coolshell.cn/tag/javascript' class='tag-link-114' title='51个话题' style='font-size: 18.5321100917pt;'>Javascript</a>
+<a href='http://coolshell.cn/tag/jquery' class='tag-link-191' title='11个话题' style='font-size: 10.3119266055pt;'>jQuery</a>
+<a href='http://coolshell.cn/tag/linux' class='tag-link-37' title='60个话题' style='font-size: 19.4311926606pt;'>Linux</a>
+<a href='http://coolshell.cn/tag/mysql' class='tag-link-106' title='7个话题' style='font-size: 8pt;'>MySQL</a>
+<a href='http://coolshell.cn/tag/oop' class='tag-link-245' title='8个话题' style='font-size: 8.64220183486pt;'>OOP</a>
+<a href='http://coolshell.cn/tag/password' class='tag-link-319' title='8个话题' style='font-size: 8.64220183486pt;'>password</a>
+<a href='http://coolshell.cn/tag/performance' class='tag-link-120' title='15个话题' style='font-size: 11.8532110092pt;'>Performance</a>
+<a href='http://coolshell.cn/tag/php' class='tag-link-35' title='25个话题' style='font-size: 14.5504587156pt;'>PHP</a>
+<a href='http://coolshell.cn/tag/programmer' class='tag-link-70' title='94个话题' style='font-size: 21.871559633pt;'>Programmer</a>
+<a href='http://coolshell.cn/tag/programming' class='tag-link-499' title='8个话题' style='font-size: 8.64220183486pt;'>Programming</a>
+<a href='http://coolshell.cn/tag/programming-language' class='tag-link-115' title='12个话题' style='font-size: 10.6972477064pt;'>programming language</a>
+<a href='http://coolshell.cn/tag/puzzle' class='tag-link-514' title='11个话题' style='font-size: 10.3119266055pt;'>Puzzle</a>
+<a href='http://coolshell.cn/tag/pythondev' class='tag-link-33' title='29个话题' style='font-size: 15.4495412844pt;'>Python</a>
+<a href='http://coolshell.cn/tag/ruby' class='tag-link-69' title='10个话题' style='font-size: 9.79816513761pt;'>Ruby</a>
+<a href='http://coolshell.cn/tag/sql' class='tag-link-131' title='10个话题' style='font-size: 9.79816513761pt;'>SQL</a>
+<a href='http://coolshell.cn/tag/tdd' class='tag-link-485' title='8个话题' style='font-size: 8.64220183486pt;'>TDD</a>
+<a href='http://coolshell.cn/tag/ui' class='tag-link-47' title='12个话题' style='font-size: 10.6972477064pt;'>UI</a>
+<a href='http://coolshell.cn/tag/unix' class='tag-link-21' title='33个话题' style='font-size: 16.0917431193pt;'>Unix</a>
+<a href='http://coolshell.cn/tag/vim' class='tag-link-50' title='19个话题' style='font-size: 13.1376146789pt;'>vim</a>
+<a href='http://coolshell.cn/tag/web' class='tag-link-30' title='38个话题' style='font-size: 16.8623853211pt;'>Web</a>
+<a href='http://coolshell.cn/tag/windows' class='tag-link-49' title='17个话题' style='font-size: 12.623853211pt;'>Windows</a>
+<a href='http://coolshell.cn/tag/xml' class='tag-link-104' title='8个话题' style='font-size: 8.64220183486pt;'>XML</a>
+<a href='http://coolshell.cn/tag/%e5%ae%89%e5%85%a8' class='tag-link-318' title='19个话题' style='font-size: 13.1376146789pt;'>安全</a>
+<a href='http://coolshell.cn/tag/%e7%a8%8b%e5%ba%8f%e5%91%98' class='tag-link-58' title='96个话题' style='font-size: 22pt;'>程序员</a>
+<a href='http://coolshell.cn/tag/%e7%ae%97%e6%b3%95' class='tag-link-77' title='10个话题' style='font-size: 9.79816513761pt;'>算法</a>
+<a href='http://coolshell.cn/tag/interview' class='tag-link-164' title='16个话题' style='font-size: 12.2385321101pt;'>面试</a></div>
+</div></div>
+<!-- sidebar north END -->
+
+<div id="centersidebar">
+
+	<!-- sidebar east START -->
+	<div id="eastsidebar" class="sidebar">
+	<div id="categories-367921423" class="widget widget_categories"><h3>分类目录</h3>		<ul>
+	<li class="cat-item cat-item-189"><a href="http://coolshell.cn/category/proglanguage/dotnet" >.NET编程</a> (3)
+</li>
+	<li class="cat-item cat-item-8"><a href="http://coolshell.cn/category/proglanguage/ajaxdev" >Ajax开发</a> (9)
+</li>
+	<li class="cat-item cat-item-5"><a href="http://coolshell.cn/category/proglanguage/cplusplus" >C/C++语言</a> (70)
+</li>
+	<li class="cat-item cat-item-186"><a href="http://coolshell.cn/category/proglanguage/erlang" >Erlang</a> (1)
+</li>
+	<li class="cat-item cat-item-4"><a href="http://coolshell.cn/category/proglanguage/javadev" >Java语言</a> (32)
+</li>
+	<li class="cat-item cat-item-11"><a href="http://coolshell.cn/category/proglanguage/phpdev" >PHP脚本</a> (11)
+</li>
+	<li class="cat-item cat-item-33"><a href="http://coolshell.cn/category/proglanguage/pythondev" >Python</a> (23)
+</li>
+	<li class="cat-item cat-item-100"><a href="http://coolshell.cn/category/proglanguage/rubydev" >Ruby</a> (5)
+</li>
+	<li class="cat-item cat-item-20"><a href="http://coolshell.cn/category/operatingsystem/unixlinux" >Unix/Linux</a> (69)
+</li>
+	<li class="cat-item cat-item-7"><a href="http://coolshell.cn/category/proglanguage/webdev" >Web开发</a> (101)
+</li>
+	<li class="cat-item cat-item-19"><a href="http://coolshell.cn/category/operatingsystem/mswindows" >Windows</a> (12)
+</li>
+	<li class="cat-item cat-item-195"><a href="http://coolshell.cn/category/itnews" >业界新闻</a> (26)
+</li>
+	<li class="cat-item cat-item-509"><a href="http://coolshell.cn/category/%e4%bc%81%e4%b8%9a%e5%ba%94%e7%94%a8" >企业应用</a> (2)
+</li>
+	<li class="cat-item cat-item-9"><a href="http://coolshell.cn/category/technews" >技术新闻</a> (33)
+</li>
+	<li class="cat-item cat-item-550"><a href="http://coolshell.cn/category/%e6%8a%80%e6%9c%af%e7%ae%a1%e7%90%86" >技术管理</a> (12)
+</li>
+	<li class="cat-item cat-item-12"><a href="http://coolshell.cn/category/techarticle" >技术读物</a> (115)
+</li>
+	<li class="cat-item cat-item-18"><a href="http://coolshell.cn/category/operatingsystem" >操作系统</a> (45)
+</li>
+	<li class="cat-item cat-item-105"><a href="http://coolshell.cn/category/datebase" >数据库</a> (10)
+</li>
+	<li class="cat-item cat-item-10"><a href="http://coolshell.cn/category/misc" >杂项资源</a> (262)
+</li>
+	<li class="cat-item cat-item-15"><a href="http://coolshell.cn/category/process" >流程方法</a> (46)
+</li>
+	<li class="cat-item cat-item-23"><a href="http://coolshell.cn/category/progdesign" >程序设计</a> (81)
+</li>
+	<li class="cat-item cat-item-602"><a href="http://coolshell.cn/category/%e7%b3%bb%e7%bb%9f%e6%9e%b6%e6%9e%84" >系统架构</a> (8)
+</li>
+	<li class="cat-item cat-item-1"><a href="http://coolshell.cn/category/tools" >编程工具</a> (65)
+</li>
+	<li class="cat-item cat-item-3"><a href="http://coolshell.cn/category/proglanguage" >编程语言</a> (173)
+</li>
+	<li class="cat-item cat-item-6"><a href="http://coolshell.cn/category/netsecurity" >网络安全</a> (26)
+</li>
+	<li class="cat-item cat-item-39"><a href="http://coolshell.cn/category/career" >职场生涯</a> (33)
+</li>
+	<li class="cat-item cat-item-271"><a href="http://coolshell.cn/category/funny" >趣味问题</a> (18)
+</li>
+	<li class="cat-item cat-item-52"><a href="http://coolshell.cn/category/story" >轶事趣闻</a> (147)
+</li>
+		</ul>
+</div>	</div>
+	<!-- sidebar east END -->
+
+	<!-- sidebar west START -->
+	<div id="westsidebar" class="sidebar">
+	<div id="archives-2" class="widget widget_archive"><h3>归档</h3>		<ul>
+	<li><a href='http://coolshell.cn/articles/date/2014/11'>2014年十一月</a>&nbsp;(2)</li>
+	<li><a href='http://coolshell.cn/articles/date/2014/10'>2014年十月</a>&nbsp;(2)</li>
+	<li><a href='http://coolshell.cn/articles/date/2014/09'>2014年九月</a>&nbsp;(2)</li>
+	<li><a href='http://coolshell.cn/articles/date/2014/08'>2014年八月</a>&nbsp;(2)</li>
+	<li><a href='http://coolshell.cn/articles/date/2014/06'>2014年六月</a>&nbsp;(1)</li>
+	<li><a href='http://coolshell.cn/articles/date/2014/05'>2014年五月</a>&nbsp;(4)</li>
+	<li><a href='http://coolshell.cn/articles/date/2014/04'>2014年四月</a>&nbsp;(4)</li>
+	<li><a href='http://coolshell.cn/articles/date/2014/03'>2014年三月</a>&nbsp;(5)</li>
+	<li><a href='http://coolshell.cn/articles/date/2014/02'>2014年二月</a>&nbsp;(3)</li>
+	<li><a href='http://coolshell.cn/articles/date/2014/01'>2014年一月</a>&nbsp;(2)</li>
+	<li><a href='http://coolshell.cn/articles/date/2013/12'>2013年十二月</a>&nbsp;(3)</li>
+	<li><a href='http://coolshell.cn/articles/date/2013/11'>2013年十一月</a>&nbsp;(1)</li>
+	<li><a href='http://coolshell.cn/articles/date/2013/10'>2013年十月</a>&nbsp;(6)</li>
+	<li><a href='http://coolshell.cn/articles/date/2013/08'>2013年八月</a>&nbsp;(1)</li>
+	<li><a href='http://coolshell.cn/articles/date/2013/07'>2013年七月</a>&nbsp;(8)</li>
+	<li><a href='http://coolshell.cn/articles/date/2013/06'>2013年六月</a>&nbsp;(2)</li>
+	<li><a href='http://coolshell.cn/articles/date/2013/05'>2013年五月</a>&nbsp;(3)</li>
+	<li><a href='http://coolshell.cn/articles/date/2013/04'>2013年四月</a>&nbsp;(3)</li>
+	<li><a href='http://coolshell.cn/articles/date/2013/03'>2013年三月</a>&nbsp;(3)</li>
+	<li><a href='http://coolshell.cn/articles/date/2013/02'>2013年二月</a>&nbsp;(5)</li>
+	<li><a href='http://coolshell.cn/articles/date/2013/01'>2013年一月</a>&nbsp;(1)</li>
+	<li><a href='http://coolshell.cn/articles/date/2012/12'>2012年十二月</a>&nbsp;(4)</li>
+	<li><a href='http://coolshell.cn/articles/date/2012/11'>2012年十一月</a>&nbsp;(5)</li>
+	<li><a href='http://coolshell.cn/articles/date/2012/10'>2012年十月</a>&nbsp;(3)</li>
+	<li><a href='http://coolshell.cn/articles/date/2012/09'>2012年九月</a>&nbsp;(4)</li>
+	<li><a href='http://coolshell.cn/articles/date/2012/08'>2012年八月</a>&nbsp;(8)</li>
+	<li><a href='http://coolshell.cn/articles/date/2012/07'>2012年七月</a>&nbsp;(4)</li>
+	<li><a href='http://coolshell.cn/articles/date/2012/06'>2012年六月</a>&nbsp;(7)</li>
+	<li><a href='http://coolshell.cn/articles/date/2012/05'>2012年五月</a>&nbsp;(6)</li>
+	<li><a href='http://coolshell.cn/articles/date/2012/04'>2012年四月</a>&nbsp;(6)</li>
+	<li><a href='http://coolshell.cn/articles/date/2012/03'>2012年三月</a>&nbsp;(6)</li>
+	<li><a href='http://coolshell.cn/articles/date/2012/02'>2012年二月</a>&nbsp;(3)</li>
+	<li><a href='http://coolshell.cn/articles/date/2012/01'>2012年一月</a>&nbsp;(6)</li>
+	<li><a href='http://coolshell.cn/articles/date/2011/12'>2011年十二月</a>&nbsp;(5)</li>
+	<li><a href='http://coolshell.cn/articles/date/2011/11'>2011年十一月</a>&nbsp;(9)</li>
+	<li><a href='http://coolshell.cn/articles/date/2011/10'>2011年十月</a>&nbsp;(6)</li>
+	<li><a href='http://coolshell.cn/articles/date/2011/09'>2011年九月</a>&nbsp;(5)</li>
+	<li><a href='http://coolshell.cn/articles/date/2011/08'>2011年八月</a>&nbsp;(14)</li>
+	<li><a href='http://coolshell.cn/articles/date/2011/07'>2011年七月</a>&nbsp;(6)</li>
+	<li><a href='http://coolshell.cn/articles/date/2011/06'>2011年六月</a>&nbsp;(12)</li>
+	<li><a href='http://coolshell.cn/articles/date/2011/05'>2011年五月</a>&nbsp;(5)</li>
+	<li><a href='http://coolshell.cn/articles/date/2011/04'>2011年四月</a>&nbsp;(18)</li>
+	<li><a href='http://coolshell.cn/articles/date/2011/03'>2011年三月</a>&nbsp;(16)</li>
+	<li><a href='http://coolshell.cn/articles/date/2011/02'>2011年二月</a>&nbsp;(16)</li>
+	<li><a href='http://coolshell.cn/articles/date/2011/01'>2011年一月</a>&nbsp;(18)</li>
+	<li><a href='http://coolshell.cn/articles/date/2010/12'>2010年十二月</a>&nbsp;(11)</li>
+	<li><a href='http://coolshell.cn/articles/date/2010/11'>2010年十一月</a>&nbsp;(11)</li>
+	<li><a href='http://coolshell.cn/articles/date/2010/10'>2010年十月</a>&nbsp;(19)</li>
+	<li><a href='http://coolshell.cn/articles/date/2010/09'>2010年九月</a>&nbsp;(15)</li>
+	<li><a href='http://coolshell.cn/articles/date/2010/08'>2010年八月</a>&nbsp;(10)</li>
+	<li><a href='http://coolshell.cn/articles/date/2010/07'>2010年七月</a>&nbsp;(20)</li>
+	<li><a href='http://coolshell.cn/articles/date/2010/06'>2010年六月</a>&nbsp;(9)</li>
+	<li><a href='http://coolshell.cn/articles/date/2010/05'>2010年五月</a>&nbsp;(13)</li>
+	<li><a href='http://coolshell.cn/articles/date/2010/04'>2010年四月</a>&nbsp;(12)</li>
+	<li><a href='http://coolshell.cn/articles/date/2010/03'>2010年三月</a>&nbsp;(11)</li>
+	<li><a href='http://coolshell.cn/articles/date/2010/02'>2010年二月</a>&nbsp;(7)</li>
+	<li><a href='http://coolshell.cn/articles/date/2010/01'>2010年一月</a>&nbsp;(9)</li>
+	<li><a href='http://coolshell.cn/articles/date/2009/12'>2009年十二月</a>&nbsp;(22)</li>
+	<li><a href='http://coolshell.cn/articles/date/2009/11'>2009年十一月</a>&nbsp;(27)</li>
+	<li><a href='http://coolshell.cn/articles/date/2009/10'>2009年十月</a>&nbsp;(17)</li>
+	<li><a href='http://coolshell.cn/articles/date/2009/09'>2009年九月</a>&nbsp;(14)</li>
+	<li><a href='http://coolshell.cn/articles/date/2009/08'>2009年八月</a>&nbsp;(21)</li>
+	<li><a href='http://coolshell.cn/articles/date/2009/07'>2009年七月</a>&nbsp;(18)</li>
+	<li><a href='http://coolshell.cn/articles/date/2009/06'>2009年六月</a>&nbsp;(19)</li>
+	<li><a href='http://coolshell.cn/articles/date/2009/05'>2009年五月</a>&nbsp;(27)</li>
+	<li><a href='http://coolshell.cn/articles/date/2009/04'>2009年四月</a>&nbsp;(53)</li>
+	<li><a href='http://coolshell.cn/articles/date/2009/03'>2009年三月</a>&nbsp;(43)</li>
+	<li><a href='http://coolshell.cn/articles/date/2008/10'>2008年十月</a>&nbsp;(1)</li>
+	<li><a href='http://coolshell.cn/articles/date/2007/12'>2007年十二月</a>&nbsp;(1)</li>
+	<li><a href='http://coolshell.cn/articles/date/2006/11'>2006年十一月</a>&nbsp;(1)</li>
+	<li><a href='http://coolshell.cn/articles/date/2004/06'>2004年六月</a>&nbsp;(1)</li>
+		</ul>
+</div>	</div>
+	<!-- sidebar west END -->
+	<div class="fixed"></div>
+</div>
+
+<!-- sidebar south START -->
+<div id="southsidebar" class="sidebar">
+<div id="get-recent-comments" class="widget widget_get_recent_comments"><h3>最新评论</h3><div id="get_recent_comments_wrap"><ul>	<li><a href="http://coolshell.cn/articles/7965.html#comment-1621552" title="一个fork的面试题, 2012年08月01日">jxncjl</a>: @cbsheng fork的COW是当需要修改内容的时候，子进程才能拷贝父进程 的内容，同样的道理，当子进程需要printf时，需要修改缓存 区，所以从父进程那拷贝过去的。</li>
+	<li><a href="http://coolshell.cn/articles/12103.html#comment-1621228" title="vfork 挂掉的一个问题, 2014年11月21日">jxncjl</a>: #include #include #include int glob = 6; int main() { int var, v; var = 5; v = 88; pid_t pid; if((pid =...</li>
+	<li><a href="http://coolshell.cn/articles/4795.html#comment-1621020" title="开源中最好的Web开发的资源, 2011年06月08日">tomlee</a>: @bambuchelika shit 下贱</li>
+	<li><a href="http://coolshell.cn/articles/4429.html#comment-1620915" title="面试题：火车运煤问题, 2011年04月11日">cnfan</a>: 看来思路一样的人是有的，和BlowBlood一样，不过最初的 开端想法不一样。我是从一开始就考虑了满载的情况和费满载的情况 ，然后才是后面的思路，这样的话整个推理没有停顿，不需要...</li>
+	<li><a href="http://coolshell.cn/articles/914.html#comment-1620903" title="6个变态的C语言Hello World程序, 2009年05月25日">donknow</a>: #define _0_ #include _0_ #define __________ std::cout #define _________ char #define ________ int #define...</li>
+	<li><a href="http://coolshell.cn/articles/12136.html#comment-1620260" title="Google Inbox如何跨平台重用代码？, 2014年11月26日">daemonh</a>: 陈同学，你以前有没有混linuxforum上？以前MSN里有 一个叫 左耳朵耗子 是不是你啊？</li>
+	<li><a href="http://coolshell.cn/articles/9543.html#comment-1620185" title="“C++的数组不支持多态”？, 2013年04月29日">陈皓</a>: 我的文章被转了很多了，你google吧。</li>
+	<li><a href="http://coolshell.cn/articles/12052.html#comment-1620183" title="Leetcode 编程训练, 2014年10月23日">陈皓</a>: 哪些资料说的？</li>
+	<li><a href="http://coolshell.cn/articles/11377.html#comment-1620063" title="C语言结构体里的成员数组和指针, 2014年04月01日">tomwang1013</a>: 皓哥，问个问题，为啥同一个表达式f.a-&gt;s在if后面 和printf里面解释会不一样呢？if里面它的值是4，而pr intf中就报错了？</li>
+	<li><a href="http://coolshell.cn/articles/4990.html#comment-1619734" title="程序员技术练级攻略, 2011年07月18日">云中凌</a>: 发现我的顺序是倒过来的。。。。</li>
+	<li><a href="http://coolshell.cn/articles/1484.html#comment-1619634" title="TCP网络关闭的状态变换时序图, 2009年09月27日">hilojack</a>: 图18-13 是重复的</li>
+	<li><a href="http://coolshell.cn/articles/11609.html#comment-1619568" title="TCP 的那些事儿（下）, 2014年05月28日">web</a>: 目前Linux上的拥塞算法已经不是BIC-TCP,而是CUB IC了,浩哥其实可以介绍一下CUBIC</li>
+	<li><a href="http://coolshell.cn/articles/11609.html#comment-1619563" title="TCP 的那些事儿（下）, 2014年05月28日">web</a>: Jacobson / Karels Algorithm（参看RFC6289） 这句写错了,应该是6298</li>
+	<li><a href="http://coolshell.cn/articles/12052.html#comment-1619423" title="Leetcode 编程训练, 2014年10月23日">xMAs</a>: 你好，谢谢您分享的leetcode的解题思路，我在看您的解题 的时候，注意到您在题目《Intersection of Two Linked Lists》中对一个私有函数int...</li>
+	<li><a href="http://coolshell.cn/articles/12136.html#comment-1619391" title="Google Inbox如何跨平台重用代码？, 2014年11月26日">哆啦比猫</a>: @CocoaBob 后台可以，但是问题在于前台啊</li>
+</ul></div></div><div id="text-2" class="widget widget_text"><h3>友情链接</h3>			<div class="textwidget"><ul class='blogroll'>
+<li><a href="http://blog.csdn.net/haoel" target="_blank" onclick="pageTracker._trackPageview('/outgoing/blog.csdn.net/haoel?referer=http://coolshell.cn');">陈皓的博客</a></li>
+
+<li><a href="http://ifeve.com/" target="_blank" title="促进并发编程的研究和推广" onclick="pageTracker._trackPageview('/outgoing/ifeve.com/?referer=http://coolshell.cn');">并发编程</a></li>
+
+
+<li><a href="http://www.raychase.net/" target="_blank" title="一个啰嗦的程序员" onclick="pageTracker._trackPageview('/outgoing/www.raychase.net/?referer=http://coolshell.cn');">四火的唠叨</a></li>
+
+
+
+<li><a href="http://www.hellogcc.org/" target=_blank title="致力于讨论和学习GNU Toolchain方面的工作组" onclick="pageTracker._trackPageview('/outgoing/www.hellogcc.org//?referer=http://coolshell.cn/');">HelloGcc Working Group</a></li>
+
+<li><a href="http://http://blog.lvscar.info/" target=_blank title="Just for Fun" onclick="pageTracker._trackPageview('/outgoing/http://blog.lvscar.info/?referer=http://coolshell.cn/');">吕毅的Blog</a></li>
+
+<li><a href="http://www.cnblogs.com/weidagang2046/" target=_blank title="Just for Fun" onclick="pageTracker._trackPageview('/outgoing/http://www.cnblogs.com/weidagang2046/?referer=http://coolshell.cn/');">Todd Wei的Blog</a></li>
+
+<li><a href="http://www.cppfans.org/" target=_blank title="记录我们点滴学习工作生活" onclick="pageTracker._trackPageview('/outgoing/http://www.cppfans.org/?referer=http://coolshell.cn/');">C++爱好者博客</a></li>
+
+<li><a href="http://www.mhtml5.com/" target=_blank title="致力于HTML5在中国的发展与应用" onclick="pageTracker._trackPageview('/outgoing/http://www.mhtml5.com/?referer=http://coolshell.cn/');">HTML5研究小组</a></li>
+
+
+<li><a href="http://zhuwenhao.com/" target=_blank title="朱文昊的中文博客－－专注技术，向往自由" onclick="pageTracker._trackPageview('/outgoing/http://zhuwenhao.com/?referer=http://coolshell.cn/');">朱文昊Albert Zhu</a></li>
+
+
+<li><a href="http://www.cguage.com/" target=_blank title="某VC++软件开发爱好者" onclick="pageTracker._trackPageview('/outgoing/http://www.cguage.com/?referer=http://coolshell.cn/');">C瓜哥的博客</a></li>
+
+
+<li><a href="http://www.kaiyuanba.cn/" target=_blank title="汇聚各种开源项目的中英文混合介绍并分类排列，致力于软件项目的开源事业" onclick="pageTracker._trackPageview('/outgoing/http://www.kaiyuanba.cn/?referer=http://coolshell.cn/');">开源吧</a></li>
+
+
+
+<li><a href="http://HelloACM.com/" target=_blank title="Smart Ideas, Smart Algorithms" onclick="pageTracker._trackPageview('/outgoing/http://HelloACM.com/?referer=http://coolshell.cn/');">ACMer</a></li>
+
+<li><a href="http://chenpeng.info/" target=_blank title="优秀的开源软件让生活更简单" onclick="pageTracker._trackPageview('/outgoing/http://chenpeng.info/?referer=http://coolshell.cn/');">陈鹏个人博客</a></li>
+
+<li><a href="http://www.coderli.com/" target=_blank title="一个普通的coder，coding为了生活，coding因为消遣:-) Just a coder" onclick="pageTracker._trackPageview('/outgoing/http://www.coderli.com/?referer=http://coolshell.cn/');">OneCoder</a></li>
+
+<li><a href="http://www.crazyshell.org/" target=_blank title="专注于底层基础, TCP/IP, 存储, (高性能.高可用.分布式.高并发系统) 研究" onclick="pageTracker._trackPageview('/outgoing/http://www.crazyshell.org/?referer=http://coolshell.cn/');">狂Shell – Happy Hacking</a></li>
+
+<li><a href="http://www.tektea.com" target=_blank title="关注IT技术 | 分享 | 交流 | 记录" onclick="pageTracker._trackPageview('/outgoing/http://www.tektea.com/?referer=http://coolshell.cn/');">TekTea's Blog </a></li>
+
+<li><a href="http://shellblog.sinaapp.com/" target=_blank title="我有一颗百度的心。" onclick="pageTracker._trackPageview('/outgoing/http://blog.tektea.comshellblog.sinaapp.com/?referer=http://coolshell.cn/');">夕水溪下 </a></li>
+</ul></div>
+		</div><div id="meta-3" class="widget widget_meta"><h3>功能</h3>			<ul>
+			<li><a href="http://coolshell.cn/wp-login.php?action=register">注册</a></li>			<li><a href="http://coolshell.cn/wp-login.php">登录</a></li>
+			<li><a href="http://coolshell.cn/feed">文章<abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="http://coolshell.cn/comments/feed">评论<abbr title="Really Simple Syndication">RSS</abbr></a></li>
+<li><a href="https://cn.wordpress.org/" title="基于WordPress，一个优美、先进的个人信息发布平台。">WordPress.org</a></li>			</ul>
+</div><div id="text-400151742" class="widget widget_text">			<div class="textwidget"><script src="http://s50.cnzz.com/stat.php?id=1785679&web_id=1785679&show=pic1" language="JavaScript" charset="gb2312"></script>
+
+
+
+</div>
+		</div></div>
+<!-- sidebar south END -->
+
+</div>
+<!-- sidebar END -->
+	<div class="fixed"></div>
+</div>
+<!-- content END -->
+
+<!-- footer START -->
+<div id="footer">
+	<a id="gotop" href="#" onclick="MGJS.goTop();return false;">回到顶部</a>
+	<a id="powered" href="http://wordpress.org/">WordPress</a>
+	<div id="copyright">
+		版权所有 &copy; 2004-2014 酷 壳 &#8211; CoolShell.cn	</div>
+	<div id="themeinfo">
+		主题由 <a href="http://www.neoease.com/">NeoEase</a> 提供, 通过 <a href="http://validator.w3.org/check?uri=referer">XHTML 1.1</a> 和 <a href="http://jigsaw.w3.org/css-validator/check/referer?profile=css3">CSS 3</a> 验证.	</div>
+</div>
+<!-- footer END -->
+
+</div>
+<!-- container END -->
+</div>
+<!-- wrap END -->
+
+<script class="javascript" src="http://coolshell.cn//wp-content/plugins/google-syntax-highlighter/Scripts/shCore.js"></script>
+<script class="javascript" src="http://coolshell.cn//wp-content/plugins/google-syntax-highlighter/Scripts/shBrushCSharp.js"></script>
+<script class="javascript" src="http://coolshell.cn//wp-content/plugins/google-syntax-highlighter/Scripts/shBrushPhp.js"></script>
+<script class="javascript" src="http://coolshell.cn//wp-content/plugins/google-syntax-highlighter/Scripts/shBrushJScript.js"></script>
+<script class="javascript" src="http://coolshell.cn//wp-content/plugins/google-syntax-highlighter/Scripts/shBrushJava.js"></script>
+<script class="javascript" src="http://coolshell.cn//wp-content/plugins/google-syntax-highlighter/Scripts/shBrushVb.js"></script>
+<script class="javascript" src="http://coolshell.cn//wp-content/plugins/google-syntax-highlighter/Scripts/shBrushSql.js"></script>
+<script class="javascript" src="http://coolshell.cn//wp-content/plugins/google-syntax-highlighter/Scripts/shBrushXml.js"></script>
+<script class="javascript" src="http://coolshell.cn//wp-content/plugins/google-syntax-highlighter/Scripts/shBrushDelphi.js"></script>
+<script class="javascript" src="http://coolshell.cn//wp-content/plugins/google-syntax-highlighter/Scripts/shBrushPython.js"></script>
+<script class="javascript" src="http://coolshell.cn//wp-content/plugins/google-syntax-highlighter/Scripts/shBrushRuby.js"></script>
+<script class="javascript" src="http://coolshell.cn//wp-content/plugins/google-syntax-highlighter/Scripts/shBrushCss.js"></script>
+<script class="javascript" src="http://coolshell.cn//wp-content/plugins/google-syntax-highlighter/Scripts/shBrushCpp.js"></script>
+<script class="javascript">
+dp.SyntaxHighlighter.ClipboardSwf = 'http://coolshell.cn//wp-content/plugins/google-syntax-highlighter/Scripts/clipboard.swf';
+dp.SyntaxHighlighter.HighlightAll('code');
+</script>
+    <!-- Start of StatCounter Code -->
+    <script type="text/javascript">
+    <!-- 
+        var sc_project=8326668; 
+        var sc_security="cccb27f2"; 
+      var sc_invisible=1;
+        var scJsHost = (("https:" == document.location.protocol) ?
+        "https://secure." : "http://www.");
+    //-->
+document.write("<sc"+"ript type='text/javascript' src='" +scJsHost +"statcounter.com/counter/counter.js'></"+"script>");
+</script>
+<noscript><div class="statcounter"><a title="web analytics" href="http://statcounter.com/"><img class="statcounter" src="http://c.statcounter.com/8326668/0/cccb27f2/1/" alt="web analytics" /></a></div></noscript>   
+    <!-- End of StatCounter Code -->
+<script type='text/javascript' src='http://coolshell.cn//wp-content/plugins/akismet/_inc/form.js?ver=3.0.3'></script>
+<script type='text/javascript' src='http://coolshell.cn//wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shCore.js?ver=3.0.9'></script>
+<script type='text/javascript' src='http://coolshell.cn//wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushCpp.js?ver=3.0.9'></script>
+<script type='text/javascript' src='http://coolshell.cn//wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushBash.js?ver=3.0.9'></script>
+<script type='text/javascript'>
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = "http://coolshell.cn//wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.9";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
+		var themecssurl = "http://coolshell.cn//wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeDefault.css?ver=3.0.9";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		//document.getElementById("syntaxhighlighteranchor").appendChild(themecss);
+		document.getElementsByTagName("head")[0].insertBefore( themecss, document.getElementById("syntaxhighlighteranchor") );
+	})();
+	SyntaxHighlighter.config.strings.expandSource = '+ expand source';
+	SyntaxHighlighter.config.strings.help = '帮助';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = '无法找到Brush：';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush不能设置 html-script选项';
+	SyntaxHighlighter.defaults['class-name'] = 'coolshell_syntaxhighlighter';
+	SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+	SyntaxHighlighter.defaults['toolbar'] = false;
+	SyntaxHighlighter.all();
+</script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var ratingsL10n = {"plugin_url":"http:\/\/coolshell.cn\/wp-content\/plugins\/wp-postratings","ajax_url":"http:\/\/coolshell.cn\/wp-admin\/admin-ajax.php","text_wait":"Please rate only 1 post at a time.","image":"stars_crystal","image_ext":"gif","max":"5","show_loading":"1","show_fading":"1","custom":"0"};
+var ratings_mouseover_image=new Image();ratings_mouseover_image.src=ratingsL10n.plugin_url+"/images/"+ratingsL10n.image+"/rating_over."+ratingsL10n.image_ext;;
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://coolshell.cn//wp-content/plugins/wp-postratings/postratings-js.js?ver=1.79'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var viewsCacheL10n = {"admin_ajax_url":"http:\/\/coolshell.cn\/wp-admin\/admin-ajax.php","post_id":"7965"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://coolshell.cn//wp-content/plugins/wp-postviews/postviews-cache.js?ver=1.68'></script>
+<script src="http://s50.cnzz.com/stat.php?id=1785679&web_id=1785679&show=pic1" language="JavaScript" charset="gb2312"></script>
+
+
+</body>
+</html>
+
+
+<script src="http://coolshell.cn//wp-content/themes/inove/js/1.9.0/jquery.min.js"></script>
+<script src="http://coolshell.cn//wp-content/themes/inove/js/jquery.bpopup-0.8.0.min.js"></script>
+
+<script type="text/javascript">
+;(function($) {
+    $(function() {
+        var url=document.referrer;
+        if ( url && url.search("http://")>-1) {
+            var refurl =  url.match(/:\/\/(.[^/]+)/)[1];
+            if(refurl.indexOf("baidu.com")>-1){
+                $('#nobaidu_dlg').bPopup();
+            }
+        }
+    });
+
+})(jQuery);
+</script>
+
+
+
+<div id="nobaidu_dlg" style="background-color:#fff; border-radius:15px;color:#000;display:none;padding:20px;min-width:450px;min-height:180px;">
+    <!--<span class="bClose" style="cursor:pointer; position:absolute; right:10px;top:5px;">x<span/>-->
+    <img src="http://coolshell.cn//wp-content/themes/inove/img/nobaidu.jpg" align="left">
+     <p style="margin-left:200px;margin-top: 20px; line-height: 30px;">
+     检测到你还在使用百度这个搜索引擎，<br/>
+     作为一个程序员，这是一种自暴自弃！<br/>
+     <br/>
+     </p>
+     <p align="center" style="margin-top:20px;">
+     <b><a href="http://coolshell.cn/articles/7186.html">作环保的程序员，从不用百度开始！</a></b>
+     </p>
+</div>
+
+
+<!-- Dynamic page generated in 0.564 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2014-12-05 09:08:24 -->
+
+<!-- Compression = gzip -->

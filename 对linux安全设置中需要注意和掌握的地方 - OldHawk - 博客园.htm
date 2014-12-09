@@ -1,0 +1,195 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>对linux安全设置中需要注意和掌握的地方 - OldHawk - 博客园</title>
+<link type="text/css" rel="stylesheet" href="/bundles/blog-common.css?v=my4FYfT2lmqb3sakS-rxSQYr2TpdJ4R7fpviWLuq5wg1"/>
+<link id="MainCss" type="text/css" rel="stylesheet" href="/skins/KJC/bundle-KJC.css?v=McXcFJ2-CRZdiVVqslrCDSDQBSqn2L0cp0NmbZiGmwc1"/>
+<link type="text/css" rel="stylesheet" href="/blog/customcss/22810.css?v=2ZrnyLvujri0JcZL%2byqh2v25sMg%3d"/>
+<link title="RSS" type="application/rss+xml" rel="alternate" href="http://www.cnblogs.com/taobataoma/rss"/>
+<link title="RSD" type="application/rsd+xml" rel="EditURI" href="http://www.cnblogs.com/taobataoma/rsd.xml"/>
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="http://www.cnblogs.com/taobataoma/wlwmanifest.xml"/>
+<script src="http://common.cnblogs.com/script/jquery.js" type="text/javascript"></script>  
+<script type="text/javascript">var currentBlogApp = 'taobataoma', cb_enable_mathjax=false;</script>
+<script src="/bundles/blog-common.js?v=_F6vMpUraZDFoT85Xf9mf4IazxZUUUCHJBFoubR7iR01" type="text/javascript"></script>
+</head>
+<body>
+<a name="top"></a>
+
+<table class="Framework" cellspacing="0" cellpadding="0" width="100%">
+	<tr>
+		<td colspan="3">
+			
+<div id="top">
+<table cellpadding="10" cellspacing="0">
+	<tr>
+		<td nowrap>
+			<h1><a id="Header1_HeaderTitle" class="headermaintitle" href="http://www.cnblogs.com/taobataoma/">OldHawk</a></h1>
+			菜地一块，欢迎拍砖
+		</td>
+	</tr>
+</table>
+</div>
+<div id="sub">
+	<div id="sub-right">
+<div class="BlogStats">posts - 207, comments - 272, trackbacks - 49, articles - 0</div></div>
+	
+&nbsp;
+<a id="Header1_MyLinks1_HomeLink" href="http://www.cnblogs.com/">博客园</a>&nbsp;::
+<a id="Header1_MyLinks1_MyHomeLink" href="http://www.cnblogs.com/taobataoma/">首页</a>&nbsp;::
+<a id="Header1_MyLinks1_NewPostLink" rel="nofollow" href="http://i.cnblogs.com/EditPosts.aspx?opt=1">新随笔</a>&nbsp;::
+<a id="Header1_MyLinks1_ContactLink" accesskey="9" rel="nofollow" href="http://space.cnblogs.com/msg/send/OldHawk">联系</a>&nbsp;::
+<a id="Header1_MyLinks1_Syndication" href="http://www.cnblogs.com/taobataoma/rss">订阅</a>
+<a id="Header1_MyLinks1_XMLLink" class="XMLLink" href="http://www.cnblogs.com/taobataoma/rss"><img src="http://www.cnblogs.com/images/xml.gif" alt="订阅" /></a>&nbsp;::
+<a id="Header1_MyLinks1_Admin" rel="nofollow" href="http://i.cnblogs.com/">管理</a>
+
+</div>
+		</td>
+	</tr>
+	<tr>
+		<td class="LeftCell">
+			<div id="leftmenu">
+            	
+		            <div id="blog-calendar" style="display:none"></div><script type="text/javascript">loadBlogDefaultCalendar();</script>
+		            
+<div id=cell>
+<img src="/Skins/KJC/Images/icon-group.jpg" hspace=5 align=left vspace=2><h3>公告</h3>
+<div id=news>
+	<div id="blog-news"></div><script type="text/javascript">loadBlogNews();</script>
+</div>
+</div>
+
+	            
+	            <div id="blog-sidecolumn"></div><script type="text/javascript">loadBlogSideColumn();</script>
+			</div>
+		</td>
+		<td class="MainCell">
+			<div id="main">
+				
+
+	<div class="post">
+		<div class="posthead">
+			<h2>
+				<a id="cb_post_title_url" class="singleposttitle" href="http://www.cnblogs.com/taobataoma/archive/2010/05/27/1745125.html">对linux安全设置中需要注意和掌握的地方</a>
+			</h2>
+ 			Posted on <span id="post-date">2010-05-27 11:08</span> <a href='http://www.cnblogs.com/taobataoma/'>OldHawk</a> 阅读(<span id="post_view_count">...</span>) 评论(<span id="post_comment_count">...</span>)  <a href ="http://i.cnblogs.com/EditPosts.aspx?postid=1745125" rel="nofollow">编辑</a> <a href="#" onclick="AddToWz(1745125);return false;">收藏</a>
+			<script type="text/javascript">var allowComments=true,isLogined=false,cb_blogId=22810,cb_entryId=1745125,cb_blogApp=currentBlogApp,cb_blogUserGuid='5365360b-63cf-dd11-9e4d-001cf0cd104b',cb_entryCreatedDate='2010/5/27 11:08:00';loadViewCount(cb_entryId);</script>
+			
+		</div>
+		<div class="postbody"><div id="cnblogs_post_body"><p>服务器的安全 (防范于未然 比入侵后再修补漏洞要好的多 一旦遭到入侵以后 当你发现你的水平在黑客的水平之下<br />话 最好重装系统 并且更新你软件的版本为最新的) 注明 : 如果没有查出被入侵的原因 和对方使用什么漏洞以及路径<br />重装系统也是于事无补 <br /><br />需要注意的地方:<br /><br />1.使用 复杂的口令( 都是废话 但是却是 非常关键的 很多资料都谈到了 我也不必再重复)<br /><br />使用 chage -M 60 用户名<br />来设置 60 天为口令的最长有效期<br />并且要设置 一个验证模块 pam_cracklib.so <br /><br />这个模块 是用来检查 口令强度 它会调用 cracklib 来测试口令是否会被破解 <br />它会检查 你的口令<br />1是不是和原来的口令一样 或者只是变换了大小写 <br />2检查口令是否太短 <br />3 口令是否和原来的相像<br />只要 把 /etc/pam.d/passwd<br />文件中的 添加 passwor required pam_cracklib.so retry=3 minlength=12 difok=5<br />retry=3 就是给用户3次机会设置口令 并且长度至少为12 至少要有5个字符和旧口令不同<br />password required pam_cracklib.so retry=3 minlen=12 difok=3<br />password required pam_unix.so use_authtok nullok md5<br /><br /><br />2.屏弃 不安全的连接方式 : telnet 以及 ftp 都是不安全的连接方式 ( 尽量采用 ssh 和sftp 等等<br />有加密的通讯方式 防止通讯数据被人嗅探或者截获)<br /><br /><br />3. 对敏感文件的权限设置 必须非常谨慎:<br />日志文件 首先创建一个用户组: groupadd logs<br />进入日志目录: /var/log<br />把所有的文件都归进 logs用户组 chgrp -R logs .<br />把所有目录的权限都 设置为 rwxr-x--- 就是750 <br />所有的文件设置为 rw-r----- 就是640<br />chmod　-R　700　/etc/rc.d/init.d/*　 <br />这表示只有root才允许读、写、执行该目录下的script文件。<br /><br />hosts.deny hosts.allow<br /><br />{控制台访问安全 <br />1、取消普通用户的控制台访问权限，你应该取消普通用户的控制台访问权限。 <br />比如shutdown、reboot、halt等命令。 <br />　　# rm -f /etc/security/console.apps/ <br />　　是你要注销的程序名。 <br />2、不允许从不同的控制台进行root登陆 <br />　　"/etc/securetty"文件允许你定义root用户可以从那个TTY设备登陆。你可以编辑"/etc/securetty"文件，再不需要登陆的TTY设备前添加&ldquo;#&rdquo;标志，来禁止从该TTY设备进行root登陆。 <br />　　在/etc/inittab文件中有如下一段话： <br />　　# Run gettys in standard runlevels <br />　　1:2345:respawn:/sbin/mingetty tty1 <br />　　2:2345:respawn:/sbin/mingetty tty2 <br />　　#3:2345:respawn:/sbin/mingetty tty3 <br />　　#4:2345:respawn:/sbin/mingetty tty4 <br />　　#5:2345:respawn:/sbin/mingetty tty5 <br />　　#6:2345:respawn:/sbin/mingetty tty6 <br />　　系统默认的可以使用6个控制台，即Alt+F1,Alt+F2...，这里在3，4，5，6前面加上&ldquo;#&rdquo;，注释该句话，这样现在只有两个控制台可供使用，最好保留两个。然后重新启动init进程，改动即可生效！} <br /><br /><br />修改 /etc/ssh/sshd_config <br />里的 <br />PermitRootLogin yes 修改为 no<br />这样就能防止 root 直接远程登陆<br /><br />如果 不希望 用口令验证来登陆 可以选择 基于密钥的登陆方式<br />将以下配置做一下简单的修改：<br />#AuthorizedKeysFile .ssh/authorized_keys 将#注释去掉<br />该选项用于设置用户公钥文件存储位置，系统默认位置在用户目录下的.ssh/authorized_keys<br /><br />#PasswordAuthentication yes 将#去掉，并将yes改成no<br />系统默认使用基于密码的验证方式，这样就禁止了使用基于密码验证方式，而改成了基于密钥的验证方式，从而提高了系统的安全性<br />2. 密钥制作具体的过程<br />(1) 添加远程登陆用户<br /># adduser remoter<br /># passwd remoter //为reomter设置密码,我在我把密码设为fire<br /># su &ndash;l remoter <br />$ ssh-keygen -t rsa<br />Generating public/private rsa key pair.<br />Enter file in which to save the key (/home/remoter/.ssh/id_rsa): 密钥保存的路径<br />Created directory '/home/remoter/.ssh'.<br />Enter passphrase (empty for no passphrase): 输入密钥密码,在此我设为fire<br />Enter same passphrase again:<br />Your identification has been saved in /home/remoter/.ssh/id_rsa. 私钥密码保存径<br />Your public key has been saved in /home/remoter/.ssh/id_rsa.pub. 公钥密码保存路径<br />The key fingerprint is:<br />ff:50:a6:95:5d:1a:39:96:14:f7:e6:7f:91:ea:6f:b4 reomter@linuxhero 密码指纹<br />(2)重命名公钥<br />$ ls &ndash;al 可以看到在/home/reomter/目录下有一个.ssh文件，进入该目录，<br />$ cd .ssh<br />$ mv id_rsa.pub authorized_keys 将其重命名与以下修改的配置文件一至,注意不要拼写错<br />（3）将私钥下载到本地。<br />可以利用remoter相应的FTP用户名和密码登陆，将id_rsa下载到本地.<br />再使用puttygen.exe处理用户私钥。运行&rdquo;puttygen.exe&rdquo;点击&rdquo;load&rdquo;选取开始下载的id_rsa，<br />系统要求输入私钥密码输入，如图所示，<br />在这里我输入的私钥密码为fire.<br />输入密码后，单击确定再点点save private key按钮，将密钥保存为id.ppk.<br />(4)基于密钥的远程登陆<br />运行putty.exe , 选择&ldquo;Session",在"HostName(orIP address)"输入IP：192.168.0.20,port:22<br />再选择"Connection",选&ldquo;SSH&rdquo;-&gt;"Auth"-&gt;"Browse"选取开始转换过来的密钥,单击"Open<br /><br />输入用户名:reomter,密码为fire,是私钥密码，而不是系统用用户密码.<br />3. SSH服务配置文件的详细介绍<br />#Port 22 指定的SSHD使用的端口，为了安全你还可以在此修改默认端口<br />#Protocol 2,1 指定优先使用的SSH协议<br />#ListenAddress 0.0.0.0 使用的IP地址（IPV4格式）<br />#ListenAddress :: 使用的IP地址 （IPV6格式）<br /><br /># HostKey for protocol version 1 使用SSH1协议的密钥<br />#HostKey /etc/ssh/ssh_host_key SSH1密钥的保存路径<br /># HostKeys for protocol version 2 使用SSH2协议的密钥<br />#HostKey /etc/ssh/ssh_host_rsa_key SSH2协议rsa密钥保存路径<br />#HostKey /etc/ssh/ssh_host_dsa_key SSH2协议dsa密钥的保存路径<br /><br /># Lifetime and size of ephemeral version 1 server key SSH1服务器密钥的生命周期<br />#KeyRegenerationInterval 3600 密钥重建周期，单位为秒<br />#ServerKeyBits 768 服务器密钥的长度<br /><br /># Logging 日志<br />#obsoletes QuietMode and FascistLogging<br />#SyslogFacility AUTH 日志方式<br />SyslogFacility AUTHPRIV 日志方式<br />#LogLevel INFO 日志等级<br /><br /># Authentication:<br /><br />#LoginGraceTime 120 登陆延时<br />#PermitRootLogin yes 禁止root用户登陆<br />#StrictModes yes 严格模式<br /><br />#RSAAuthentication yes RSA验证<br />#PubkeyAuthentication yes 公钥验证<br />#AuthorizedKeysFile .ssh/authorized_keys 密钥存放路径<br /><br /># rhosts authentication should not be used 禁止rhosts验证模式<br />#RhostsAuthentication no rhosts验证模式<br /># Don't read the user's ~/.rhosts and ~/.shosts files 不读取用户的~/.rhosts and ~/.shosts 文件<br /><br />#IgnoreRhosts yes 忽略Rhosts<br /><br /># To disable tunneled clear text passwords, change to no here!<br />#PasswordAuthentication yes 基于密码的验证模式<br />#PermitEmptyPasswords no 允许空密码<br /><br /><br /><br />4.对一些关键的 切换命令 比如 su mount ..等等 要严加控制 其使用权限 (su 需要指定专门的用户才可以使用 防止}<br />暴力破解 mount 防止 有人通过远程挂载 一些 目录 上面suid 和sgid 的 程序 用于入侵或者攻击)<br /><br />禁止任何人通过su命令改变为root用户 <br />su(Substitute　User替代用户)命令允许你成为系统中其他已存在的用户。如果你不希望任何人通过su命令改变为root用户或对某些用户限制使用su命令，你可以在su配置文件（在"/etc/pam.d/"目录下）的开头添加下面两行： <br />编辑su文件(vi　/etc/pam.d/su)，在开头添加下面两行： <br />auth　sufficient　/lib/security/pam_rootok.so　debug　 <br />auth　required　/lib/security/Pam_wheel.so　group=wheel　 <br />这表明只有"wheel"组的成员可以使用su命令成为root用户。你可以把用户添加到"wheel"组，以使它可以使用su命令成为root用户。<br />还可以把su 命令归进 专门的用户组和用户 同样达到这样的效果<br /><br />防止 有人通过远程挂载 一些 目录 上面suid 和sgid 的 程序 用于入侵或者攻击<br />修改/etc/fstab<br />只给分区必须的权限<br />像这样LABEL=/bakups /bakups ext3 nosuid,noexec 1 2<br /><br />noexec表示不能在这个分区运行程序，nosuid不能使用nosuid的程序，根据情况自行设置其他分区，一般来说/tmp,/usr都要nosuid<br /><br /><br />5.经常的更新 和升级软件的版本 ( 但是注意 盲目的升级软件版本 很可能会造成新的软件 运行不正常)<br />redhat 有可以从 redhat network 获得 更新的功能 使用 up2date 就可以更新系统的各类服务的数据包<br /><br /><br />6.sudo 的设置 ( 这个工具是授权 非root用户 运行root 用户的一些命令)<br /><br /><br /><br />7.suid 和sgid 位的设置 ( 这个的危害 恐怕是非常严重的 )<br />suid 位和sgid 位的设置 chmod u+s 文件 和chmod g+s 文件<br />查找 suid 位的文件的命令: <br />#　find　/　-type　f　\(　-perm　-04000　-o　-perm　-02000　\)　\-exec　ls　-lg　{}　\;<br />禁止其中不必要的程序: <br /><br />----# chmod a-s program_name <br /><br /><br />umask 命令 <br /><br /><br />8.各种服务配置文件的设置 (卸载 自己没有开设的服务的数据包 不要保留 )<br /><br /><br />9.为了防止dns欺骗 要对的设置 进行修改 必须 让服务器 进行反相解析 并且要 设置为 先从 外部dns服务器上<br />获得数据 不要 设置为 直接读取自己机子的缓存信息<br />修改"/etc/host.conf"文件 <br />"/etc/host.conf"说明了如何解析地址。编辑"/etc/host.conf"文件（vi　/etc/host.conf），加入下面这行： <br />#　Lookup　names　via　DNS　first　then　fall　back　to　/etc/hosts.　 <br />order　bind,hosts　 <br />#　We　have　machines　with　multiple　IP　addresses.　 <br />multi　on　 <br />#　Check　for　IP　address　spoofing.　 <br />nospoof　on　 <br />第一项设置首先通过DNS解析IP地址，然后通过hosts文件解析。第二项设置检测是否"/etc/hosts"文件中的<br />主机是否拥有多个IP地址（比如有多个以太口网卡）。第三项设置说明要注意对本机未经许可的电子欺骗。 <br /><br /><br />10.最好可以使用 vpn 来替代 利用外部网络直接连接 远程服务器 <br /><br />11. hosts.deny hosts.allow 文件 阻挡 非授权用户访问系统服务<br />第一步： <br />编辑hosts.deny文件（vi　/etc/hosts.deny），加入下面这行 <br />#　Deny　access　to　everyone.　 <br />ALL:　ALL@ALL,　PARANOID <br />这表明除非该地址包好在允许访问的主机列表中，否则阻塞所有的服务和地址。 <br />第二步： <br />编辑hosts.allow文件（vi　/etc/hosts.allow），加入允许访问的主机列表，比如： <br />ftp:　202.54.15.99　foo.com <br />202.54.15.99和　foo.com是允许访问ftp服务的ip地址和主机名称。 <br /><br />tcpdchk程序是tepd　wrapper设置检查程序。它用来检查你的tcp　　<br />wrapper设置，并报告发现的潜在的和真实的问题。设置完后，运行下面这个命令： <br />[Root@kapil　/]#　tcpdchk　<br /><br /><br />12.iptables 防火墙设置 (这里需要严格设置 并且要设置 关键文件的权限 同时在这里 在保证安全的前提下<br />尽量少的 规则可以提高效率和处理速度 对出口数据同样要严格控制 防止反相连接 或者成为别人dos 攻击的发源<br />地 !)<br /><br />#输出链允许源地址是xxx.xxx.xxx.xxx的数据输出，也可以指定网卡例： &ndash;i eth0 (防止成为别人dos 攻击的发源<br />地 !)<br />iptables -A OUTPUT -s xxx.xxx.xxx.xxx -j ACCEPT<br />#限制ping包每一秒钟一个，10个后开始<br />iptables -A INPUT -p icmp -d xxx.xxx.xxx.xxx -m limit --limit 1/s --limit-burst 10 -j ACCEPT<br /><br />#限制IP碎片，每秒钟只允许100个碎片，防止DoS攻击<br />iptables -A INPUT -f -m limit --limit 100/s --limit-burst 100 -j ACCEPT<br />需要的人可以到下面的地址看 动画 <br /><a target="_blank" href="http://www.fineacer.com/Soft_Show.asp?SoftID=231">http://www.fineacer.com/Soft_Show.asp?SoftID=231</a><br /><a target="_blank" href="http://www.fineacer.com/Soft_Show.asp?SoftID=254">http://www.fineacer.com/Soft_Show.asp?SoftID=254</a><br /><br />13.at 计划任务的 检查 (包括at.deny at.allow 文件的检查) 这里强调一下 很多服务都有这样地后缀名为 deny allow<br />文件 设置不当 就会给人以可乘之机 所以前面说的 对服务设置地了较 同样非常重要) <br /><br /><br />14.cron 设置 检查 定期运行的 列表里 有什么不妥当的 shell<br /><br />15.系统在分区过程中 最好能够 把一些目录分开 如果有多的硬盘 最好把/home 和 应用程序的目录分在各自单独的<br />硬盘上 并且做好 用户的磁盘配额 来防止 入侵后对系统进行 恶意的写数据 破坏硬盘的数据 最大限度上保证<br />数据的安全 <br />----经常检查磁盘空间对维护Linux的文件系统非常必要。而Linux中对磁盘空间维护使用最多的命令就是df和du了。 <br /><br />----df命令主要检查文件系统的使用情况，通常的用法是: <br /><br />----#df -k <br /><br />----Filesystem 1k-blocks Used Available Use% Mounted on <br /><br />----/dev/hda3 1967156 1797786 67688 96% / <br /><br />----du命令检查文件、目录和子目录占用磁盘空间的情况，通常带-s选项使用，只显示需检查目录占用磁盘空间的总计， <br />而不会显示下面的子目录占用磁盘的情况。 <br /><br />----% du -s /usr/X11R6/* <br /><br />----34490 /usr/X11R6/bin <br /><br />----1 /usr/X11R6/doc <br /><br />----3354 /usr/X11R6/include <br /><br /><br />16.做好 raid 磁盘列阵 来防止硬盘的损坏 (安全不仅仅 指的是 系统的安全还 包括数据的安全和通讯的安全)<br /><br />目前 raid的方案分为7个级别<br />其中 0, 1, 5 三个级别经常用到<br /><br />17.文件的文件完整性检查 工具 tripwire 用来检查文件的 完整性 ( 所以强烈建议 linux 系统的管理员<br />在工作过程中 做好工作笔记 记录在对系统设置修改中 更改的设置) 完整性检查的数据不要保存到这台<br />主机的硬盘上 最好使用移动介质(cdrom 或者移动硬盘)<br /><br />18.检查一些容易被黑客替换的命令文件 ls mount netstat lsof top ..... 并且要备份一套 完整的没有做过修改的<br />系统检查文件的 备份 (防止 这些检查工具被 木马话或者被替换 )<br /><br />19.最好 使用 chattr 命令 给写文件加上 一些属性 比如 +i 这样可以防止任意更改文件 给日志文件加上 +a的<br />属性 这个属性是只许添加 不许更改的属性 <br />反正修改 grub 的内容<br />chattr　+i　/etc/grub <br />防止未经许可的删除或添加服务： <br />[root@kapil　/]#　chattr　+i　/etc/services <br /><br />需要注意的目录 /bin /sbin /usr/bin 和/lib 这些目录都是不经常变动的 <br />(虽然不能阻止 获得root 用户的黑客修改参数 但是对 防范脚本攻击却非常有效 可以避免<br />软件本身有漏洞 造成被人修改 至少可以延缓 别人的攻击速度 对方停留在系统的时间越长 留下的日志也就越多<br />还有专门的工具 可以增强这个功能 设置后甚至于root 用户都无权修改)<br /><br />20.备份文件 这样可以在出现问题的时候快速恢复数据<br /><br />21.syslogd 日志 最好设置一个远程日志服务器来保存日志 (这样在黑客攻破主机后 为了擦除 日志记录 就必须攻击<br />日志服务器 并且日志服务器上有可能只有开启日志的服务 从而为入侵增加了难度 争取了 大量的时间)<br />在这里 还要说明一点 一旦root 用户被攻破 黑客很容易从syslog-ng的配置文件中 发现日志文件发送的目标<br />(就是远程的日志服务器地址) 黑客可能无法攻破日志主机但是 很有可能发动 dos 攻击导致日志主机崩溃无法记录<br />黑客在后面 所做的操作 这样会对通过日志文件找出他攻击的方法 造成很大的难度 <br />所以 为了能够欺骗 黑客 可以 设置日志发送到内部网络中的假的或者不存在的目标 同时在网络中 设置一个秘密<br />的日志主机 通过一种软件 passlogd 把秘密的日志服务器的网卡设置成为混和模式 来记录网络中传送的所有日志<br />(passlogd 是一种日志嗅探工具)<br />如果是使用交换机 可以在交换机上设置对这个秘密日志服务器的某一个端口转发所有的数据包 <br /><br />所以建议: 同时设置2个日志服务器 一个秘密 一个为公开 这样 可以对黑客的攻击日志服务器 起到很好的作用<br /><br />由于日志文件是以明文传输的 容易被人截获 所以需要以加密的方式来传递日志信息 可以使用stunnel 来加密数据<br /><br />(stunnel 在安全焦点有下载) 但是由于加密了 就会导致passlogd 嗅探工具失效 所以这需要自己平衡<br /><br /><br /><br />22.logsentry 日志监视工具 这个是用来在发现 监视工具中设置的一些敏感的 日志可以 <br />尽快 发到 管理员手上<br /><br /><br />23.protsentry 端口监视工具 这个可以设置一些端口 来防止黑客对系统的踩点(扫描) 这工具还可以设置 一些<br />被扫描后 运行什么脚本的功能 所以功能强大 如果可以设置的好 可以非常有效的防止 黑客对系统的扫描<br /><br />24. 删除所有的特殊账户 <br />你应该删除所有不用的缺省用户和组账户（比如lp,　sync,　shutdown,　halt,　news,　uucp,　operator,　games,　gopher等）。 <br />删除用户： <br />[root@kapil　/]#　userdel　LP　 <br />删除组： <br />[root@kapil　/]#　groupdel　LP　 <br />修改/etc/profile 文件<br />上面强调的都是从 网络上攻击的防范方法:<br /><br />其实物理的安全同样重要 要是人家 拿走了你的硬盘 恐怕你的设置再安全也是 于事无补<br /><br />25.同时对 bios 设置和 给grub 加密 还有 对自己离开主机是 锁定 系统都是非常必要的 ( 可以防止 别人通过<br />物理接触来攻破系统)<br /><br />Bios　Security <br />一定要给Bios设置密码，以防通过在Bios中改变启动顺序，而可以从软盘启动。这样可以阻止别人试图<br />用特殊的启动盘启动你的系统，还可以阻止别人进入Bios改动其中的设置（比如允许通过软盘启动等）。 <br /><br /><br />26.上面的做的再好 没有管理员的责任心 敬业精神 警惕心 和上进心 (每天需要对日志 和关键信息的 查阅 应该是管理<br />员的必修课 同时需要不断的学习 增强自己的技术水平) 再强的硬件和环境 都是一堆摆设 只会 成为黑客谈论的<br />笑柄 说白了 安全在于人为 不要怪罪于软件和硬件 本身 !! <br /><br />-------------------------引用黑客常说的一句话; 没有入侵不了的系统<br />我加上一句 :但是事在人为 肯定会有打败不了的管理员<br /><br />最后忠告大家 当发现自己被某个 ip入侵 请不要采取极端的恶意攻击活动 最好 发信件告知 (因为攻击主机很可能<br />是 黑客的跳板) 采取恶意攻击 搞不好会把自己 搞进监狱 <br /><br />由于我并不是一个 非常了解入侵 的一个菜鸟 上面的有些知识点 有出入 希望大家给予添加和指导</p></div><div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory"></div>
+<div id="EntryTag"></div>
+<div id="blog_post_info">
+</div>
+<div class="clear"></div>
+<div id="post_next_prev"></div>
+</div>
+
+</div>
+	</div><a name="!comments"></a><div id="blog-comments-placeholder"></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id="comment_form" class="commentform">
+<a name="commentform"></a>
+<div id="divCommentShow"></div>
+<div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" id="lnk_RefreshComments" onclick="return RefreshCommentList();">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+<div id="comment_form_container"></div>
+<div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+<div id="site_nav_under"><a href="http://www.cnblogs.com/" target="_blank" title="开发者的网上家园">博客园首页</a><a href="http://q.cnblogs.com/" target="_blank" title="程序员问答社区">博问</a><a href="http://news.cnblogs.com/" target="_blank" title="IT新闻">新闻</a><a href="http://home.cnblogs.com/ing/" target="_blank">闪存</a><a href="http://job.cnblogs.com/" target="_blank">程序员招聘</a><a href="http://kb.cnblogs.com/" target="_blank">知识库</a></div>
+<div id="opt_under_post"></div>
+<script type="text/javascript">
+    var enableGoogleAd = canShowAdsense(); var googletag = googletag || {}; googletag.cmd = googletag.cmd || [];
+    fixPostBodyFormat();
+</script>
+<div id="ad_under_post_holder">
+<script type='text/javascript'>
+    var googletag = googletag || {};
+    googletag.cmd = googletag.cmd || [];
+    (function () {
+        if (enableGoogleAd) {
+            var gads = document.createElement('script');
+            gads.async = true;
+            gads.type = 'text/javascript';
+            var useSSL = 'https:' == document.location.protocol;
+            gads.src = (useSSL ? 'https:' : 'http:') + '//www.googletagservices.com/tag/js/gpt.js';
+            var node = document.getElementsByTagName('script')[0];
+            node.parentNode.insertBefore(gads, node);
+        }
+    })();
+</script>
+<script type='text/javascript'>
+    try {
+        if (enableGoogleAd) {
+            googletag.cmd.push(function () {
+                googletag.defineSlot('/1090369/cnblogs_blogpost_C1_sitehome', [300, 250], 'div-gpt-ad-1346480159711-0').addService(googletag.pubads());
+                googletag.defineSlot('/1090369/cnblogs_blogpost_C2', [468, 60], 'div-gpt-ad-1410860226396-0').addService(googletag.pubads());
+                googletag.pubads().enableSingleRequest();
+                googletag.enableServices();
+            });
+        };
+    } catch (e) { }
+</script>
+<div id="google_ad_c1" class="c_ad_block">
+    <div id='div-gpt-ad-1346480159711-0' style='width:300px; height:250px;'>
+    <script type='text/javascript'>
+        try {
+            if (enableGoogleAd) {
+                googletag.cmd.push(function () { googletag.display('div-gpt-ad-1346480159711-0'); });            
+            } else {
+                $('#div-gpt-ad-1346480159711-0').hide();
+            }
+    } catch (e) { }
+    </script>
+    </div>
+</div>
+</div>
+<div id="under_post_news"></div>
+<div id="google_ad_c2" class="c_ad_block">
+<div id='div-gpt-ad-1410860226396-0' style='width:468px; height:60px;'>
+<script type='text/javascript'>
+try {
+    if (enableGoogleAd) {
+        googletag.cmd.push(function () { googletag.display('div-gpt-ad-1410860226396-0'); });
+    } else {
+        $('#div-gpt-ad-1346480159711-0').hide();
+    }
+} catch (e) { }
+</script>
+</div>
+</div>
+<div id="under_post_kb"></div>
+<div id="HistoryToday" class="c_ad_block"></div>
+<script type="text/javascript">
+$(function () {
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 200);
+});
+</script>
+</div>
+
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" class="FooterCell">
+			
+<p id="footer">
+	Powered by: 
+	<br />
+	
+	<a id="Footer1_Hyperlink3" NAME="Hyperlink1" href="http://www.cnblogs.com/" style="font-family:Verdana;font-size:12px;">博客园</a>
+	<br />
+	Copyright &copy; OldHawk
+</p>
+
+		</td>
+	</tr>
+</table>
+
+</body>
+</html>
