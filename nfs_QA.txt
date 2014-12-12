@@ -1,0 +1,4 @@
+
+1. 通过路由器无法挂载nfs，错误如下:
+	mount nfs报错"reason given by server: Permission denied"
+	解决方法：在挂载选项里添加insecure。（insecure选项允许NFS客户端不使用NFS保留的端口）
