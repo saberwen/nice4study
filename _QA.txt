@@ -1,0 +1,24 @@
+
+    2014-12-16
+1. 通过路由器无法挂载nfs，错误如下:
+    mount nfs报错"reason given by server: Permission denied"
+    解决方法：在挂载选项里添加insecure。（insecure选项允许NFS客户端不使用NFS保留的端口）
+
+
+    2014-12-16
+2. gdb调试
+    <多线程调试>
+    info threads : 显示当前可调试的所有线程,前面有*的是当前调试的线程
+    thread ID    : 切换当前调试的线程为指定ID的线程
+    break thread_test.c:123 thread all: 在所有线程中相应的行上设置断点
+    thread apply ID0 ID1 command      : 让一个或多个执行GDB命令command
+    set schduler-locking off|on|step  : off  --> 不锁定任何线程,所有线程都执行(default)
+                                        on   --> 只有当前被调试的线程执行
+                                        step --> 在单步时,除next过一个函数的情况以外,只有当前线程会执行
+
+    Q: 调试多线程时,info threads没有线程信息?
+    A: 1. 使用的glibc库中libpthread库被strip.
+          解决方法: 使用未strip过的libpthread库或strip --strip-debug libpthread.so.0
+       2. libthread_db库和libpthread库不匹配
+          解决方法: set solib-absolute-prefix或set sysroot设置正确库搜索路径
+
